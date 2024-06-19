@@ -6,12 +6,43 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/HomeView.vue')
+      component: () => import('../pages/HomeView.vue')
     },
     {
       path: '/about',
       name: 'about',
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../pages/AboutView.vue')
+    },
+    {
+      path: '/article',
+      name: 'article',
+      component: () => import('../pages/ArticleView.vue')
+    },
+    {
+      path: '/author',
+      name: 'author',
+      component: () => import('../pages/AuthorView.vue')
+    },
+    {
+      path: '/favorite',
+      name: 'favorite',
+      component: () => import('../pages/FavoriteView.vue'),
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: () => import('../pages/ProfileView.vue'),
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../pages/LoginView.vue')
     }
   ]
 })
