@@ -87,7 +87,7 @@ function buildNetwork(count: number, nodes: vNG.Nodes, edges: vNG.Edges) {
   </div>
 </template>
 
-<style>
+<style scoped>
 .container {
   display: flex;
   flex-direction: column;
