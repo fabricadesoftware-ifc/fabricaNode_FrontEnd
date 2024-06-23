@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { GraphContainer, PainelControl } from '@/components'
+import {useRouter} from 'vue-router'
 
 import { useGraph } from '@/composables';
 import { useGraphStore, useAuthStore } from '@/stores'
@@ -10,6 +11,8 @@ import { onMounted } from 'vue';
 import { PassageUser } from '@passageidentity/passage-elements/passage-user';
 
 const authStore = useAuthStore();
+
+const router = useRouter()
 
 const getUserInfo = async () => {
   try {
@@ -37,6 +40,7 @@ useGraph()
   <div class="container">
    <GraphContainer :nodes="nodes" :edges="edges" :configs="configs"/>
    <PainelControl/>
+   <button @click="router.push('/login')">Login</button>
   </div>
 </template>
 
