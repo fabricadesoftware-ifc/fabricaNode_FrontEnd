@@ -2,9 +2,33 @@
 import { GraphContainer, PainelControl } from '@/components'
 
 import { useGraph } from '@/composables';
-import { useGraphStore } from '@/stores'
+import { useGraphStore, useAuthStore } from '@/stores'
 
 const { nodes, edges, configs } = useGraphStore()
+
+import { onMounted } from 'vue';
+import { PassageUser } from '@passageidentity/passage-elements/passage-user';
+
+const authStore = useAuthStore();
+
+const getUserInfo = async () => {
+  try {
+    const authToken = localStorage.getItem('psg_auth_token');
+    const passageUser = new PassageUser(authToken);
+    const user = await passageUser.userInfo(authToken);
+    if (user) {
+      await authStore.setToken(authToken);
+    } else {
+      authStore.unsetToken();
+    }
+  } catch (error) {
+    authStore.unsetToken();
+  }
+};
+
+onMounted(() => {
+  getUserInfo();
+});
 
 useGraph()
 </script>
