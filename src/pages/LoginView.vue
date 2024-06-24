@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import '@passageidentity/passage-elements/passage-auth';
+import MenuView from '@/components/header/menu.vue'
 </script>
 
 <template>
@@ -11,6 +12,8 @@ import '@passageidentity/passage-elements/passage-auth';
       ></passage-auth>
     </div>
   </div>
+  <MenuView></MenuView>
+  <h1>Login</h1>
 </template>
 
 
