@@ -1,12 +1,9 @@
-import axios from 'axios';
-
+import { Api } from '@/plugins';
 export default class AuthService {
+  constructor(private api: Api) {}
+
   async postUserToken(token: String) {
-    const response = await axios.get('http://0.0.0.0:8000/users/me/', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await this.api.get('/api/auth/');
     return response.data;
   }
 }
