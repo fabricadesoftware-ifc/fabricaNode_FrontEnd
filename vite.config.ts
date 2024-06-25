@@ -11,9 +11,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
-        name: 'Fake Store',
-        short_name: 'FakeStore',
-        description: 'Fake Store: Fantástica loja de produtos',
+        name: 'Fabrica Node',
+        short_name: 'FabricaNode',
+        description: 'O Fábrica Node é um projeto inovador que utiliza a teoria dos grafos para organizar e distribuir artigos dos servidores do Instituto Federal Catarinense (IFC) de maneira eficiente e dinâmica. Nosso sistema constrói um grafo interativo, onde cada nó representa um artigo e as arestas indicam conexões baseadas em categorias e palavras-chave. Isso permite uma visualização intuitiva e uma navegação simplificada pelo vasto acervo de pesquisas, facilitando a descoberta e o acesso a conteúdos relevantes para estudantes, pesquisadores e a comunidade acadêmica.',
         theme_color: '#ffffff',
         icons: [
           {
@@ -29,7 +29,7 @@ export default defineConfig({
             purpose: 'maskable',
           },
         ],
-        id: 'com.fake-store.app',
+        id: 'com.fabrica-node.app',
         orientation: 'any',
         background_color: '#ffffff',
         start_url: '.',
@@ -43,11 +43,6 @@ export default defineConfig({
       },
     }),
   ],
-  server: {
-    hmr: {
-      clientPort: 443,
-    },
-  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
