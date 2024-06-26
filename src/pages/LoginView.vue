@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import '@passageidentity/passage-elements/passage-auth';
-import MenuView from '@/components/header/menu.vue'
+import MenuView from '@/components/DefaultHeader/DefaultMenu.vue'
 </script>
 
 <template>
   <div>
+  <MenuView/>
     <h1>Login</h1>
     <div class="authContainer">
       <passage-auth
@@ -12,7 +13,7 @@ import MenuView from '@/components/header/menu.vue'
       ></passage-auth>
     </div>
   </div>
-  <MenuView></MenuView>
+
 
 </template>
 

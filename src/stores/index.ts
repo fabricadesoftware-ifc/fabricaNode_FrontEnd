@@ -1,4 +1,6 @@
 import { useGraphStore } from "./graph/graph";
 import { useAuthStore } from "./auth/auth";
 
-export  {useGraphStore, useAuthStore };
+import { titles } from "./template/template" 
+
+export { useGraphStore, useAuthStore, titles };
