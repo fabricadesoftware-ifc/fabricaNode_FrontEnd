@@ -1,6 +1,7 @@
 <script setup>
 import { useScreen } from '@/composables';
 import { ref } from 'vue';
+import { RouterLink } from 'vue-router';
 
 const { isMobile } = useScreen()
 const menuActive = ref(false)
@@ -14,12 +15,22 @@ const menuActive = ref(false)
                 <h1 id="logoNeeds">NODE</h1>
             </div>
             <ul class="routers-desktop">
-                <li>HOME</li>
-                <li>PUBLICAÇÕES</li>
-                <li>AUTORES</li>
-                <li>SOBRE</li>
+                <RouterLink class="router-link" to="/">
+                    <li>HOME</li>
+                </RouterLink>
+                <RouterLink class="router-link" to="/article">
+                    <li>PUBLICAÇÕES</li>
+                </RouterLink>
+                <RouterLink class="router-link" to="/author">
+                    <li>AUTORES</li>
+                </RouterLink>
+                <RouterLink class="router-link" to="/about">
+                    <li>SOBRE</li>
+                </RouterLink>
             </ul>
-            <button>ENTRAR</button>
+            <RouterLink class="router-link" to="/login">
+                <button class="login-button">ENTRAR</button>
+            </RouterLink>
 
         </div>
         <div class="header-mobile" v-else>
@@ -31,17 +42,21 @@ const menuActive = ref(false)
             <div class="menu-icon">
                 <img @click="menuActive = true" src="@/assets/menu-aberto.png" width="50px">
             </div>
-            <div class="menu-active" v-if="menuActive">
-                <div class="menu-mobile">
-                    <div class="menu-icon">
-                        <img @click="menuActive = false" src="@/assets/x.png" width="30px">
-                    </div>
-                    <ul class="routers-mobile">
-                        <li>HOME</li>
-                        <li>PUBLICAÇÕES</li>
-                        <li>AUTORES</li>
-                        <li>SOBRE</li>
-                    </ul>
+        </div>
+        <div class="menu-active" v-if="menuActive">
+            <div class="menu-mobile">
+                <div class="menu-icon">
+                    <img class="close" @click="menuActive = false" src="@/assets/x.png" width="30px">
+                </div>
+                <ul class="routers-mobile">
+                    <li>HOME</li>
+                    <li>PUBLICAÇÕES</li>
+                    <li>AUTORES</li>
+                    <li>SOBRE</li>
+                </ul>
+                <div id="logo">
+                    <h1 id="logoFabrica">FABRICA</h1>
+                    <h1 id="logoNeeds">NODE</h1>
                 </div>
             </div>
         </div>
@@ -49,7 +64,9 @@ const menuActive = ref(false)
 </template>
 <style setup>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+a{
+    text-decoration: none;
+}
 .header-mobile {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -59,6 +76,7 @@ const menuActive = ref(false)
     background-color: white;
     border-bottom: 1px solid rgb(83, 83, 83);
 }
+
 .header-desktop {
     display: flex;
     justify-content: center;
@@ -67,6 +85,7 @@ const menuActive = ref(false)
     background-color: white;
     border-bottom: 1px solid rgb(83, 83, 83);
 }
+
 .menu-icon {
     display: flex;
     justify-content: right;
@@ -75,6 +94,7 @@ const menuActive = ref(false)
 #logo {
     display: flex;
     width: min-content;
+    align-self: center;
 }
 
 h1 {
@@ -101,31 +121,60 @@ li {
     font-family: "Montserrat", sans-serif;
     list-style: none;
     font-size: 18px;
+    color:black;
 }
 
-button {
+.login-button {
     font-family: "Montserrat", sans-serif;
-    width: 10%;
     color: white;
     background-color: #4A4BEB;
     border-radius: 15px;
     padding: 10px;
     font-size: 18px;
 }
-.menu-active{
+
+.menu-active {
+    z-index: 999;
     position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
 }
-.menu-mobile{
+
+.menu-mobile {
     display: flex;
     flex-direction: column;
-    align-items: center ;
-}
-.routers-mobile{
-    display: flex;
+    text-align: center;
     justify-content: center;
+}
+
+.routers-mobile {
+    display: flex;
+    justify-items: center;
     align-items: center;
-    padding: 20px;
+    padding: 5vh 2vh;
     background-color: white;
+    flex-direction: column;
+
+
+}
+.router-link{
+    text-decoration: none;
+}
+.routers-mobile li {
+    display: block;
+    text-align: center;
+    width: 100%;
     border-bottom: 1px solid rgb(83, 83, 83);
+    padding: 5vh;
+    color:black
+}
+
+.close {
+    margin: 20px;
+    display: block;
+    align-self: end;
 }
 </style>

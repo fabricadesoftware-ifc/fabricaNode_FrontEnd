@@ -13,7 +13,7 @@ import MenuView from '@/components/header/menu.vue'
     </div>
   </div>
   <MenuView></MenuView>
-  <h1>Login</h1>
+
 </template>
 
 
