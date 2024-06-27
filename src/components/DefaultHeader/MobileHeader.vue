@@ -10,7 +10,7 @@ const menuActive = ref(false)
     <div class="header-mobile">
         <TextLogo />
         <div class="menu-icon">
-            <img @click="menuActive = true" src="@/assets/menu-aberto.png" width="50px">
+            <img @click="menuActive = true" src="@/assets/menu-aberto.png" class="img-menu-icon">
         </div>
     </div>
     <div class="menu-active" v-if="menuActive">
@@ -41,6 +41,11 @@ const menuActive = ref(false)
 .menu-icon {
     display: flex;
     justify-content: right;
+
+}
+
+.img-menu-icon{
+        width:30px;
 }
 
 .menu-active {

@@ -16,10 +16,13 @@ h1 {
 }
 
 .logo-fabrica {
-    font-weight: 300;
+    font-size: 25px;
+    font-weight: 500;
 }
 
 .logo-node {
+    font-size: 25px;
+    font-weight: 800;
     color: #267A7A;
 }
 </style>

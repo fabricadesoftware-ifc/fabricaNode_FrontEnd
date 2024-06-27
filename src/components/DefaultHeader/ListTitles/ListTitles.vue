@@ -34,4 +34,15 @@ defineProps({
 .router-link {
     text-decoration: none;
 }
+@media (max-width:1000px) {
+    .routers-desktop li {
+        font-size: 16px;
+    }
+    
+}
+@media (max-width:820px) {
+    .routers-desktop li {
+        font-size: 14px;
+    }     
+}
 </style>

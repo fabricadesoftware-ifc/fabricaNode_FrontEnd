@@ -18,16 +18,33 @@ import { titles } from '@/stores';
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
     background-color: white;
     border-bottom: 1px solid rgb(83, 83, 83);
 }
-
 .routers-desktop {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 60%;
-    padding: 0px 50px;
+    width: 40%;
+    margin: 0px 150px;
+}
+@media (max-width:1200px) {
+    .routers-desktop {
+        width: 50%;
+        margin: 0px 100px;
+    }
+    .header-desktop{
+        padding: 15px 35px;
+    }
+}
+@media (max-width:1050px) {
+    .routers-desktop {
+        width: 80%;
+        margin: 0px 50px;
+    }
+    .header-desktop{
+        padding: 15px 35px;
+    }
 }
 </style>

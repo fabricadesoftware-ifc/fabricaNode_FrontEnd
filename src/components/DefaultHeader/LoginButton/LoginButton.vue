@@ -17,4 +17,21 @@
 .router-link {
     text-decoration: none;
 }
+
+.login-button:hover{
+    background-color: #267A7A;
+    transition: 0.5s;
+}
+@media (max-width:1000px) {
+    .login-button {
+        padding: 7px;
+        font-size: 16px;
+    }
+}
+@media (max-width:820px) {
+    .login-button {
+        padding: 6px;
+        font-size: 14px;
+    }
+}
 </style>
