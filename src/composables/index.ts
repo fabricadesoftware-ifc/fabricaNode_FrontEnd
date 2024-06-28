@@ -1,5 +1,7 @@
-import { useGraph } from "./graph/graph";
+import { useToolTipGraph } from './graph/toolTipGraph';
+import { useBuildGraph } from './graph/buildGraph';
+import { useSetGraph } from './graph/setGraph';
 import { useScreen } from "./screen/screen";
 import { useAuth } from "./auth/auth";
 
-export { useGraph, useScreen, useAuth };
+export { useBuildGraph, useSetGraph, useScreen, useAuth, useToolTipGraph };

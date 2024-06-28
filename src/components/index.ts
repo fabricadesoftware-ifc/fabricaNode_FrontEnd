@@ -1,4 +1,5 @@
 import GraphContainer from "./graph/GraphContainer.vue";
+import NodeLabel from "./graph/label/NodeLabel.vue";
 import PainelControl from "./painel/PainelControl.vue";
 import DesktopHeader from './header/DesktopHeader.vue';
 import MobileHeader from './header/MobileHeader.vue';
@@ -15,5 +16,6 @@ export {
     ListTitles,
     TextLogo,
     LoginButton,
-    DefaultHeader
+    DefaultHeader,
+    NodeLabel
 };

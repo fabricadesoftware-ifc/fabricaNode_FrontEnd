@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { ListTitles, TextLogo, LoginButton } from '@/components';
-import { titles } from '@/stores';
+import { useTemplateStore } from '@/stores';
+
+const templateStore = useTemplateStore()
 </script>
 
 
@@ -8,7 +10,7 @@ import { titles } from '@/stores';
     <div class="header-desktop">
         <TextLogo />
         <ul class="routers-desktop">
-            <ListTitles class="router-link" v-for="(text, index) in titles" :key="index" :title="text.text" :link="text.link" />
+            <ListTitles class="router-link" v-for="(text, index) in templateStore.titles" :key="index" :title="text.text" :link="text.link" />
         </ul>
         <LoginButton />
     </div>
