@@ -19,8 +19,8 @@ const menuActive = ref(false)
                 <img class="close" @click="menuActive = false" src="@/assets/x.png" width="30px">
             </div>
             <ul class="routers-mobile">
-                <ListTitles class="router-link" to="/" v-for="(text, index) in titles" :key="index"
-                    :title="text.text" />
+                <ListTitles class="router-link"  v-for="(text, index) in titles" :key="index" 
+                    :title="text.text" :link="text.link" />
             </ul>
             <TextLogo />
         </div>
@@ -83,7 +83,7 @@ const menuActive = ref(false)
 .routers-mobile li {
     display: block;
     text-align: center;
-    width: 100%;
+    width: 100vh;
     border-bottom: 1px solid rgb(83, 83, 83);
     padding: 5vh;
     color: black

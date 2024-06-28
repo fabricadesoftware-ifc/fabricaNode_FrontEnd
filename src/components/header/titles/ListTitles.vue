@@ -1,11 +1,12 @@
 <script lang="ts" setup>
 defineProps({
-    title: String
+    title: String,
+    link: String
 })
 </script>
 
 <template>
-    <RouterLink class="router-link" to="/">
+    <RouterLink class="router-link" :to="link">
         <li>{{ title }}</li>
     </RouterLink>
 </template>

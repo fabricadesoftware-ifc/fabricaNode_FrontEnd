@@ -1,14 +1,18 @@
 const titles = [{
-    text: "HOME"
+    text: "HOME",
+    link: "/"
 },
 {
-    text: "PUBLICAÇÕES"
+    text: "PUBLICAÇÕES",
+    link: "/article"
 },
 {
-    text: "AUTORES"
+    text: "AUTORES",
+    link: "/author"
 },
 {
-    text: "SOBRE"
+    text: "SOBRE",
+    link: "/about"
 }]
 
 export { titles }

@@ -3,47 +3,48 @@ import { ListTitles, TextLogo, LoginButton } from '@/components';
 import { titles } from '@/stores';
 </script>
 
+
 <template>
     <div class="header-desktop">
         <TextLogo />
         <ul class="routers-desktop">
-            <ListTitles class="router-link" to="/" v-for="(text, index) in titles" :key="index" :title="text.text" />
+            <ListTitles class="router-link" v-for="(text, index) in titles" :key="index" :title="text.text" :link="text.link" />
         </ul>
         <LoginButton />
     </div>
 </template>
+
 
 <style scoped>
 .header-desktop {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px;
+    padding: 15px 35px;
     background-color: white;
     border-bottom: 1px solid rgb(83, 83, 83);
 }
+
 .routers-desktop {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 40%;
+    width: 100vh;
     margin: 0px 150px;
 }
+
 @media (max-width:1200px) {
     .routers-desktop {
-        width: 50%;
         margin: 0px 100px;
     }
-    .header-desktop{
-        padding: 15px 35px;
-    }
 }
+
 @media (max-width:1050px) {
     .routers-desktop {
-        width: 80%;
         margin: 0px 50px;
     }
-    .header-desktop{
+
+    .header-desktop {
         padding: 15px 35px;
     }
 }
