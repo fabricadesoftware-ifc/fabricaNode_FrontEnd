@@ -1,10 +1,8 @@
 <script lang="ts" setup>
 import { ListTitles, TextLogo } from '@/components';
 import { useTemplateStore } from '@/stores';
-import { ref } from 'vue';
 
 const templateStore = useTemplateStore();
-const menuActive = ref(false);
 </script>
 
 <template>
@@ -12,13 +10,13 @@ const menuActive = ref(false);
         <div class="header-mobile">
             <TextLogo />
             <div class="menu-icon">
-                <img @click="menuActive = true" src="@/assets/menu-aberto.png" class="img-menu-icon">
+                <img @click="templateStore.menuActive = !templateStore.menuActive" src="@/assets/menu-aberto.png" class="img-menu-icon">
             </div>
         </div>
-        <div class="menu-active" v-if="menuActive">
+        <div class="menu-active" v-if="templateStore.menuActive">
             <div class="menu-mobile">
                 <div class="menu-icon">
-                    <img class="close" @click="menuActive = false" src="@/assets/x.png" width="30px">
+                    <img class="close" @click="templateStore.menuActive = !templateStore.menuActive" src="@/assets/x.png" width="30px">
                 </div>
                 <ul class="routers-mobile">
                     <ListTitles class="router-link"  v-for="(text, index) in templateStore.titles" :key="index"

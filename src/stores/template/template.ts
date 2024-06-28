@@ -4,6 +4,7 @@ import { defineStore } from 'pinia';
 export const useTemplateStore = defineStore('template', () => {
 
     const tooltipOpacity = ref(0);
+    const menuActive = ref(false);
 
     const titles = [{
         text: "HOME",
@@ -22,5 +23,5 @@ export const useTemplateStore = defineStore('template', () => {
         link: "/about"
     }]
 
-    return { tooltipOpacity, titles };
+    return { tooltipOpacity, titles, menuActive };
 });
