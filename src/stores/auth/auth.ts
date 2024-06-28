@@ -7,13 +7,13 @@ const authService = new AuthService();
 export const useAuthStore = defineStore('auth', () => {
   const user = ref({});
 
-  async function setToken(token) {
-    user.value = await authService.postUserToken(token);
-  }
+  async function setToken() {
+    user.value = await authService.postUserToken();
+  };
 
   function unsetToken() {
     user.value = {};
-  }
+  };
 
   return { user, setToken, unsetToken };
 });
