@@ -34,8 +34,8 @@ useToolTipGraph();
 <style scoped>
 .graph {
   width: 100vw;
-  height: 86vh;
+  height: 100vh;
   border: 1px solid #ccc;
-  margin-bottom: 20px;
+  overflow: hidden;
 }
 </style>

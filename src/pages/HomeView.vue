@@ -11,10 +11,11 @@ useAuth();
 </script>
 
 <template>
-  <DefaultHeader/>
-  <div class="container">
-    <GraphContainer :nodes="currentConnections.nodes" :edges="currentConnections.edges" :configs="configs"/>
-    <PainelControl />
+  <div>
+    <DefaultHeader/>
+      <div class="container">
+        <GraphContainer :nodes="currentConnections.nodes" :edges="currentConnections.edges" :configs="configs"/>
+      </div>
   </div>
 </template>
 
@@ -24,6 +25,7 @@ useAuth();
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
+  overflow: hidden;
 }
 </style>
