@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { DesktopHeader, MobileHeader } from '@/components'
+import { DesktopHeader, MobileHeader } from '@/components';
 import { useScreen } from '@/composables';
 
 const { isMobile } = useScreen()
