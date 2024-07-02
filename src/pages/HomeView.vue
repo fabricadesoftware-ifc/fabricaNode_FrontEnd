@@ -4,7 +4,7 @@ import { GraphContainer, PainelControl, DefaultHeader } from '@/components';
 import { useAuth, useSetGraph } from '@/composables';
 import { useGraphStore } from '@/stores';
 
-const { configs } = useGraphStore();
+const { configs,toggleView } = useGraphStore();
 
 const { currentConnections } = useSetGraph();
 useAuth();
@@ -13,8 +13,9 @@ useAuth();
 <template>
   <div>
     <DefaultHeader/>
+<button @click="toggleView">teste</button>
       <div class="container">
-        <GraphContainer :nodes="currentConnections.nodes" :edges="currentConnections.edges" :configs="configs"/>
+        <GraphContainer :nodes="currentConnections?.nodes" :edges="currentConnections?.edges" :configs="configs"/>
       </div>
   </div>
 </template>

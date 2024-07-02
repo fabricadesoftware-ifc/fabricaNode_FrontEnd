@@ -16,7 +16,9 @@
   "dependencies": {
     "@passageidentity/passage-auth": "^0.1.0-beta.28",
     "@passageidentity/passage-elements": "^1.21.6",
+    "@vueuse/core": "^10.11.0",
     "axios": "^1.7.2",
+    "color-convert": "^2.0.1",
     "d3-force": "^3.0.0",
     "pinia": "^2.1.7",
     "v-network-graph": "^0.9.15",
@@ -42,7 +44,7 @@
     "prettier": "^3.2.5",
     "typescript": "~5.4.0",
     "vite": "^5.3.1",
-    "vite-plugin-vue-devtools": "^7.3.1",
+    "vite-plugin-vue-devtools": "^7.3.5",
     "vitest": "^1.6.0",
     "vue-tsc": "^2.0.21"
   }
