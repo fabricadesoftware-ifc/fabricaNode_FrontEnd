@@ -1,3 +1,3 @@
-import { generateGraphFromArticles } from "./graph/graphGenerator";
+import { generateGraphFromArticles, generateGraphFromKeywords } from "./graph/graphGenerator";
 
-export { generateGraphFromArticles }
+export { generateGraphFromArticles, generateGraphFromKeywords }
