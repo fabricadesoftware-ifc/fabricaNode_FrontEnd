@@ -8,21 +8,35 @@ const router = useRouter();
     <div>
         <DefaultHeader />
         <div class="initial-page">
-            <div>
-                <h1 class="title-initial">Conectando Conhecimento Acadêmico</h1>
+            <div class="title">
+                <h1 class="title-initial">CONECTANDO CONHECIMENTO ACADÊMICO</h1>
                 <h2 class="title-description">publicações acadêmicas conectadas de forma intuitiva, ultilizando redes especializadas, facilitando o acesso ao conhecimento.</h2>
                 <button class="button-see-graph" @click="router.push({name: 'graph'})">
                     Ver Grafo
                 </button>
             </div>
-            <div>
-                <img src="@/assets/grafo.png" width="480px">
+            <div class="grafo-img">
+                <img src="@/assets/grafo.png">
             </div>
         </div>
     </div>
 </template>
 
 <style scoped>
+.title, .grafo-img{
+    width: 50vw;
+}
+.title{
+    padding-left: 170px;
+}
+.grafo-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grafo-img > img{
+    width: 40vw;
+}
 .initial-page {
     display: flex;
     align-items: center;
@@ -30,7 +44,7 @@ const router = useRouter();
     width: 100vw;
     height: 90vh;
     background-color: #fff;
-    background-image: -webkit-linear-gradient(-30deg, #fff 45%, #22262f 45%);
+    background-image: -webkit-linear-gradient(-22deg, #fff 50%, #22262f 50%);
 }
 
 .title-initial {
@@ -46,7 +60,7 @@ const router = useRouter();
     font-weight: 400;
     width: 350px;
     color: #EA6E18;
-    margin: 10px 0px;
+    margin: 20px 0px;
 }
 
 
@@ -57,11 +71,11 @@ const router = useRouter();
     font-size: 22px;
     background-color: #267A7A;
     padding: 15px 60px;
-    color: '#fff';
+    color: white;
     margin: 30px 0px;
 }
 .button-see-graph:hover {
-    background-color: #EA6E18;
+    background-color: #4A4BEB;
     transition: 0.5s;
 }
 </style>
