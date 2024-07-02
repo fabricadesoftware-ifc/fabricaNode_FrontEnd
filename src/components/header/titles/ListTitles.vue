@@ -17,6 +17,7 @@ defineProps({
     list-style: none;
     font-size: 18px;
     color: black;
+    position: relative;
 }
 
 .routers-mobile li {
@@ -35,7 +36,34 @@ defineProps({
 .router-link {
     text-decoration: none;
 }
+li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    position: absolute;
+    transition: width 0.5s ease;
+}
 
+li:hover::after {
+    width: 100%;
+}
+
+.router-link:nth-child(1) li::after {
+    background-color: #EA6E18;
+}
+
+.router-link:nth-child(2) li::after {
+    background-color: #267A7A;
+}
+
+.router-link:nth-child(3) li::after {
+    background-color: #DA4E50;
+}
+
+.router-link:nth-child(4) li::after {
+    background-color: #4A4BEB;
+}
 @media (max-width:1000px) {
     .routers-desktop li {
         font-size: 16px;

@@ -22,7 +22,7 @@ const templateStore = useTemplateStore()
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 35px;
+    padding: 15px 170px;
     background-color: white;
     border-bottom: 1px solid rgb(83, 83, 83);
 }
@@ -31,7 +31,7 @@ const templateStore = useTemplateStore()
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100vh;
+    width: 100%;
     margin: 0px 150px;
 }
 
