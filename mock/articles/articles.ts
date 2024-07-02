@@ -4,7 +4,7 @@ const articles = [
         link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
         author: "João Silva",
         keywords: ["algoritmos", "genéticos", "otimização"],
-        categoria: "Computação",
+        categoria: "Informática",
         resume: "Este artigo explora o uso de algoritmos genéticos na otimização de funções complexas."
     },
     {
@@ -12,7 +12,7 @@ const articles = [
         link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
         author: "Maria Oliveira",
         keywords: ["inteligência artificial", "machine learning", "redes neurais"],
-        categoria: "Computação",
+        categoria: "Informática",
         resume: "Uma visão geral sobre os conceitos básicos e aplicações da inteligência artificial."
     },
     {
@@ -36,7 +36,7 @@ const articles = [
         link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
         author: "Pedro Almeida",
         keywords: ["deep learning", "processamento de imagem", "visão computacional"],
-        categoria: "Computação",
+        categoria: "Informática",
         resume: "Discute técnicas de deep learning aplicadas ao processamento e reconhecimento de imagens."
     },
     {
@@ -52,7 +52,7 @@ const articles = [
         link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
         author: "Fernanda Lima",
         keywords: ["big data", "análise de dados", "tempo real"],
-        categoria: "Computação",
+        categoria: "Informática",
         resume: "Este artigo trata das técnicas e ferramentas para análise de grandes volumes de dados em tempo real."
     },
     {
@@ -68,7 +68,7 @@ const articles = [
         link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
         author: "Juliana Santos",
         keywords: ["computação quântica", "algoritmos quânticos", "futuro da computação"],
-        categoria: "Computação",
+        categoria: "Informática",
         resume: "Uma introdução à computação quântica e seu potencial transformador na área de tecnologia."
     },
     {
@@ -76,7 +76,7 @@ const articles = [
         link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
         author: "Marcos Dias",
         keywords: ["aprendizado supervisionado", "machine learning", "classificação"],
-        categoria: "Computação",
+        categoria: "Informática",
         resume: "Uma análise detalhada dos principais algoritmos de aprendizado supervisionado e suas aplicações."
     },
     {
@@ -134,6 +134,30 @@ const articles = [
         keywords: ["energia sustentável", "tecnologias verdes", "meio ambiente"],
         categoria: "Meio Ambiente",
         resume: "Discute a importância e as inovações em tecnologias verdes para a promoção de energia sustentável."
+    },
+    {
+        label: "Redes de Computadores e Segurança",
+        link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+        author: "Patrícia Mendes",
+        keywords: ["redes de computadores", "segurança", "firewall"],
+        categoria: "Segurança",
+        resume: "Uma análise sobre a segurança em redes de computadores com foco em firewalls."
+    },
+    {
+        label: "Inteligência Artificial na Agricultura",
+        link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+        author: "Marcelo Silva",
+        keywords: ["inteligência artificial", "agricultura", "tecnologia agrícola"],
+        categoria: "Agronomia",
+        resume: "Explora como a inteligência artificial está transformando a agricultura moderna."
+    },
+    {
+        label: "Big Data em Segurança da Informação",
+        link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+        author: "Renata Oliveira",
+        keywords: ["big data", "segurança da informação", "análise de dados"],
+        categoria: "Segurança",
+        resume: "Discussão sobre o uso de big data para melhorar a segurança da informação e a análise de dados."
     }
 ];
 
