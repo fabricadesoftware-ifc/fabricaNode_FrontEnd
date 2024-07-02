@@ -19,7 +19,7 @@ export const useEventStore = defineStore('event', () => {
             templateStore.tooltipOpacity = 0;
             currentNode.node = nodes[node];
         },
-        "node:click": ({ node }: { node: string }) => {
+        "node:dblclick": ({ node }: { node: string }) => {
             const articleLink = nodes[node]?.link;
             if (articleLink) {
                 window.open(articleLink, '_blank');

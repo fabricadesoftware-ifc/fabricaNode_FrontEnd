@@ -1,10 +1,16 @@
 import { ref, computed, reactive } from 'vue';
 import { defineStore } from 'pinia';
+import { useStorage } from '@vueuse/core'
 
 import * as vNG from 'v-network-graph'
 import { ForceLayout } from 'v-network-graph/lib/force-layout';
 
 import { useNodeStore, useEdgeStore } from '@/stores';
+
+import { articles } from '../../../mock';
+import type { IArticle } from '@/interfaces';
+
+import { generateGraphFromArticles, generateGraphFromKeywords } from '@/utils';
 
 export const useGraphStore = defineStore('graph', () => {
 
@@ -21,12 +27,97 @@ export const useGraphStore = defineStore('graph', () => {
                 layoutHandler,
             },
             node: {
+                selectable: true,
+                normal: {
+                  type: "circle",
+                  radius: (node) => node.radius || 16,
+                  strokeWidth: 0,
+                  strokeColor: "#000000",
+                  strokeDasharray: "0",
+                  color: "#4466cc",
+                },
+                hover: {
+                  type: "circle",
+                  radius: (node) => node.radius || 16,
+                  strokeWidth: 0,
+                  strokeColor: "#000000",
+                  strokeDasharray: "0",
+                  color: "#dd2288",
+                },
+                selected: {
+                  type: "circle",
+                  radius: (node) => node.radius || 16,
+                  strokeWidth: 0,
+                  strokeColor: "#000000",
+                  strokeDasharray: "0",
+                  color: "#4466cc",
+                },
                 label: {
+                  visible: false,
+                  fontFamily: undefined,
+                  fontSize: 11,
+                  lineHeight: 1.1,
+                  color: "#000000",
+                  margin: 4,
+                  direction: "south",
+                  background: {
                     visible: false,
-                }
-            },
+                    color: "#ffffff",
+                    padding: {
+                      vertical: 1,
+                      horizontal: 4,
+                    },
+                    borderRadius: 2,
+                  },
+                },
+                focusring: {
+                  visible: true,
+                  width: 4,
+                  padding: 3,
+                  color: "#eebb00",
+                  dasharray: "0",
+                },
+              },
+            edge: {
+                selectable: true,
+                normal: {
+                  color: e => e.color || "#000000",
+                  width: e => e.width || 1,
+                },
+                hover: {
+                  color: "#EA6E18",
+                  width: e => (e.width || 1) + 2,
+                },
+                selected: {
+                  color: "#EA6E18",
+                  width: e => e.width || 1,
+                  dasharray: "",
+                },
+                zOrder: {
+                  enabled: true,
+                  zIndex: n => n.zIndex,
+                  bringToFrontOnHover: true,
+                  bringToFrontOnSelected: true,
+                },
+              },
         })
     );
+
+    const currentView = useStorage('teste', {
+        layout: 'articles',
+    })
+
+    function toggleGraphView(articles: IArticle[]) {
+        if (currentView.value.layout === 'articles') {
+          const { nodes: keywordNodes, edges: keywordEdges } = generateGraphFromKeywords(articles);
+          setGraphData(keywordNodes, keywordEdges);
+          currentView.value.layout = 'keywords';
+        } else {
+          const { nodes: articleNodes, edges: articleEdges } = generateGraphFromArticles(articles);
+          setGraphData(articleNodes, articleEdges);
+          currentView.value.layout = 'articles';
+        }
+      }
 
     const d3ForceEnabled = computed({
         get: () => configs.view.layoutHandler instanceof ForceLayout,
@@ -75,5 +166,9 @@ export const useGraphStore = defineStore('graph', () => {
     }
 
 
-    return { d3ForceEnabled, buildNetwork, setGraphData, configs, graph };
+    function toggleView() {
+        toggleGraphView(articles)
+      }
+
+    return { d3ForceEnabled, buildNetwork, setGraphData, configs, graph, toggleGraphView, toggleView, currentView };
 });
