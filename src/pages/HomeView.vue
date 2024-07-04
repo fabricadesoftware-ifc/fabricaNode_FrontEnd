@@ -9,7 +9,7 @@ const router = useRouter();
         <DefaultHeader />
         <div class="initial-page">
             <div class="title">
-                <div class="titles-h1">
+                <div class="titles-container">
                 <h1 class="title-conecting">conectando</h1>
                 <h1 class="title-knowledge">CONHECIMENTO</h1>
                 <div class="hover-knowledge"></div>
@@ -34,7 +34,7 @@ const router = useRouter();
 .title{
     padding-left: 170px;
 }
-.titles-h1{
+.titles-container{
     display: grid;
     width: min-content;
 }
