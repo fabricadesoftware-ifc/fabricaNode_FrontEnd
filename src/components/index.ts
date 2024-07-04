@@ -6,7 +6,8 @@ import MobileHeader from './header/MobileHeader.vue';
 import ListTitles from './header/titles/ListTitles.vue';
 import TextLogo from './header/logo/TextLogo.vue';
 import LoginButton from './header/buttons/LoginButton.vue';
-import DefaultHeader from './header/DefaultHeader.vue'
+import DefaultHeader from './header/DefaultHeader.vue';
+import DefaultFooter from './footer/DeafaultFooter.vue';
 
 export {
     GraphContainer,
@@ -17,5 +18,6 @@ export {
     TextLogo,
     LoginButton,
     DefaultHeader,
-    NodeLabel
+    NodeLabel,
+    DefaultFooter
 };
