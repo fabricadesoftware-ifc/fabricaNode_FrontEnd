@@ -9,7 +9,12 @@ const router = useRouter();
         <DefaultHeader />
         <div class="initial-page">
             <div class="title">
-                <h1 class="title-initial">CONECTANDO CONHECIMENTO ACADÊMICO</h1>
+                <div class="titles-h1">
+                <h1 class="title-conecting">conectando</h1>
+                <h1 class="title-knowledge">CONHECIMENTO</h1>
+                <div class="hover-knowledge"></div>
+                <h1 class="title-academic">acadêmico</h1>
+            </div>
                 <h2 class="title-description">publicações acadêmicas conectadas de forma intuitiva, ultilizando redes especializadas, facilitando o acesso ao conhecimento.</h2>
                 <button class="button-see-graph" @click="router.push({name: 'graph'})">
                     Ver Grafo
@@ -29,6 +34,10 @@ const router = useRouter();
 .title{
     padding-left: 170px;
 }
+.titles-h1{
+    display: grid;
+    width: min-content;
+}
 .grafo-img{
     display: flex;
     align-items: center;
@@ -47,18 +56,40 @@ const router = useRouter();
     background-image: -webkit-linear-gradient(-22deg, #fff 50%, #22262f 50%);
 }
 
-.title-initial {
+.title-conecting {
+    z-index: 2;
     font-family: "Montserrat", sans-serif;
-    font-size: 42px;
+    font-size: 38px;
     font-weight: 400;
-    width: min-content;
+    position: relative;
+}
+.hover-knowledge {
+    z-index: 1;
+    display: block;
+    background-color: #4a4aeb38;
+    width: 100%;
+    height: 18px;
+    margin-top: -26px;
+}
+.title-knowledge {
+    font-family: "Montserrat", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
 }
 
+.title-academic {
+    display: block;
+    justify-self: end;
+    font-family: "Montserrat", sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    width: max-content;
+}
 .title-description {
     font-family: "Montserrat", sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 400;
-    width: 350px;
+    width: 460px;
     color: #EA6E18;
     margin: 20px 0px;
 }
@@ -75,7 +106,7 @@ const router = useRouter();
     margin: 30px 0px;
 }
 .button-see-graph:hover {
-    background-color: #4A4BEB;
+    background-color: #EA6E18;
     transition: 0.5s;
 }
 </style>
