@@ -8,6 +8,10 @@ import TextLogo from './header/logo/TextLogo.vue';
 import LoginButton from './header/buttons/LoginButton.vue';
 import DefaultHeader from './header/DefaultHeader.vue';
 import DefaultFooter from './footer/DeafaultFooter.vue';
+import TitlesHome from './home/titles/title/TitlesHome.vue';
+import DescriptionTitle from './home/titles/description/DescriptionTitle.vue';
+import ButtonGraph from './home/button/ButtonGraph.vue';
+import GraphImage from './home/image/GraphImage.vue';
 
 export {
     GraphContainer,
@@ -19,5 +23,9 @@ export {
     LoginButton,
     DefaultHeader,
     NodeLabel,
-    DefaultFooter
+    DefaultFooter,
+    TitlesHome,
+    DescriptionTitle,
+    ButtonGraph,
+    GraphImage
 };
