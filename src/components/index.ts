@@ -12,6 +12,8 @@ import FabricaContact from './footer/contact/FabricaContact.vue';
 import LinksFabrica from './footer/links/LinksFabrica.vue';
 import LinksHeader from './footer/links/LinksHeader.vue';
 import LogoFabrica from './footer/logo/LogoFabrica.vue';
+import FastLinks from './footer/links/FastLinks.vue';
+import FooterTitles from './footer/titles/FooterTitles.vue';
 import TitlesHome from './home/titles/title/TitlesHome.vue';
 import DescriptionTitle from './home/titles/description/DescriptionTitle.vue';
 import ButtonGraph from './home/button/ButtonGraph.vue';
@@ -37,5 +39,7 @@ export {
     FabricaContact,
     LinksFabrica,
     LinksHeader,
-    LogoFabrica
+    LogoFabrica,
+    FastLinks,
+    FooterTitles
 };

@@ -1,8 +1,17 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { FooterTitles } from "@/components";
+import { useTemplateStore } from "@/stores";
+
+const templateStore = useTemplateStore();
+</script>
 <template>
   <div class="contato">
     <div>
-      <h1 class="footer-titles">CONTATO</h1>
+      <FooterTitles
+        v-for="(text, index) in templateStore.footerTitles"
+        :key="index"
+        :title="text.contactTitle"
+      />
       <ul>
         <li class="footer-li">BR-280 - Colégio Agrícola, Araquari - SC, 89245-000</li>
         <li class="footer-li">fabrica@ifc.edu.br</li>
@@ -16,12 +25,6 @@
   display: flex;
   min-height: 120px;
   width: 26.66vw;
-}
-.footer-titles {
-  font-family: "Montserrat", sans-serif;
-  color: #ea6e18;
-  font-size: 20px;
-  font-weight: 550;
 }
 .footer-li {
   color: white;

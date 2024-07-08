@@ -1,13 +1,24 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { FastLinks, FooterTitles } from "@/components";
+import { useTemplateStore } from "@/stores";
+
+const templateStore = useTemplateStore();
+</script>
 <template>
   <div class="links">
     <div>
-      <h1 class="footer-titles">LINKS RÁPIDOS</h1>
+      <FooterTitles
+        v-for="(text, index) in templateStore.footerTitles"
+        :key="index"
+        :title="text.linksTitle"
+      />
       <ul>
-        <li class="footer-li">HOME</li>
-        <li class="footer-li">PUBLICAÇÕES</li>
-        <li class="footer-li">AUTORES</li>
-        <li class="footer-li">SOBRE</li>
+        <FastLinks
+          v-for="(text, index) in templateStore.titles"
+          :key="index"
+          :title="text.text"
+          :link="text.link"
+        />
       </ul>
     </div>
   </div>
@@ -17,12 +28,6 @@
   display: flex;
   min-height: 120px;
   width: 26.66vw;
-}
-.footer-titles {
-  font-family: "Montserrat", sans-serif;
-  color: #ea6e18;
-  font-size: 20px;
-  font-weight: 550;
 }
 .footer-li {
   color: white;

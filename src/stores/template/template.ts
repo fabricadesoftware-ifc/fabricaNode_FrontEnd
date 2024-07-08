@@ -30,5 +30,10 @@ export const useTemplateStore = defineStore('template', () => {
         subtitle:"publicações acadêmicas conectadas de forma intuitiva, ultilizando redes especializadas, facilitando o acesso ao conhecimento."
     }]
 
-    return { tooltipOpacity, titles, menuActive, homeTitles };
+    const footerTitles = [{
+        linksTitle: "LINKS RÁPIDOS",
+        contactTitle: "CONTATO",
+    }]
+
+    return { tooltipOpacity, titles, menuActive, homeTitles, footerTitles };
 });
