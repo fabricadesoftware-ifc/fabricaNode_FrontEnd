@@ -23,5 +23,12 @@ export const useTemplateStore = defineStore('template', () => {
         link: "/about"
     }]
 
-    return { tooltipOpacity, titles, menuActive };
+    const homeTitles = [{
+        firstTitle: "conectando",
+        secondTitle: "CONHECIMENTO",
+        thirdTitle: "acadêmico",
+        subtitle:"publicações acadêmicas conectadas de forma intuitiva, ultilizando redes especializadas, facilitando o acesso ao conhecimento."
+    }]
+
+    return { tooltipOpacity, titles, menuActive, homeTitles };
 });

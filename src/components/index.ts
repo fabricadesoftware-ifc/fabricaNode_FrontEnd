@@ -12,6 +12,7 @@ import TitlesHome from './home/titles/title/TitlesHome.vue';
 import DescriptionTitle from './home/titles/description/DescriptionTitle.vue';
 import ButtonGraph from './home/button/ButtonGraph.vue';
 import GraphImage from './home/image/GraphImage.vue';
+import DefaultHome from './home/DefaultHome.vue';
 
 export {
     GraphContainer,
@@ -27,5 +28,6 @@ export {
     TitlesHome,
     DescriptionTitle,
     ButtonGraph,
-    GraphImage
+    GraphImage,
+    DefaultHome
 };
