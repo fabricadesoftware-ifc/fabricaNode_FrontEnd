@@ -22,6 +22,7 @@ const templateStore = useTemplateStore()
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 11vh;
     padding: 15px 170px;
     background-color: white;
     border-bottom: 1px solid rgb(83, 83, 83);
