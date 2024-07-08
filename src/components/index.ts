@@ -8,6 +8,10 @@ import TextLogo from './header/logo/TextLogo.vue';
 import LoginButton from './header/buttons/LoginButton.vue';
 import DefaultHeader from './header/DefaultHeader.vue';
 import DefaultFooter from './footer/DeafaultFooter.vue';
+import FabricaContact from './footer/contact/FabricaContact.vue';
+import LinksFabrica from './footer/links/LinksFabrica.vue';
+import LinksHeader from './footer/links/LinksHeader.vue';
+import LogoFabrica from './footer/logo/LogoFabrica.vue';
 import TitlesHome from './home/titles/title/TitlesHome.vue';
 import DescriptionTitle from './home/titles/description/DescriptionTitle.vue';
 import ButtonGraph from './home/button/ButtonGraph.vue';
@@ -29,5 +33,9 @@ export {
     DescriptionTitle,
     ButtonGraph,
     GraphImage,
-    DefaultHome
+    DefaultHome,
+    FabricaContact,
+    LinksFabrica,
+    LinksHeader,
+    LogoFabrica
 };
