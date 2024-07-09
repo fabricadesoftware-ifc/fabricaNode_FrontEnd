@@ -1,18 +1,18 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useTemplateStore } from '@/stores'
+
+const templateStore = useTemplateStore()
+
+defineProps({
+  img: String,
+  link: String
+})
+</script>
 <template>
   <div class="container-midia">
-    <a href="https://github.com/fabricadesoftware-ifc"
-      ><img src="@/assets/logo-github.png" width="55px"
-    /></a>
-    <a href="https://www.instagram.com/fabricadesoftware.ifc/"
-      ><img src="@/assets/logo-instagram.png" width="55px"
-    /></a>
-    <a href="https://br.linkedin.com/company/fabricadesoftware-ifc"
-      ><img src="@/assets/logo-linked-in.png" width="55px"
-    /></a>
-    <a href="https://x.com/FabSoftwareIFC"
-      ><img src="@/assets/logo-twiter.png" width="55px"
-    /></a>
+    <a v-for="(text, index) in templateStore.footerMidia" :href="text.link" :key="index"
+      ><img :src="text.img" width="55px" />{{ text.img }}</a
+    >
   </div>
 </template>
 <style scoped>

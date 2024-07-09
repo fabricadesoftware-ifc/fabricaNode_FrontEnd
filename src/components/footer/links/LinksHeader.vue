@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { FastLinks, FooterTitles } from "@/components";
-import { useTemplateStore } from "@/stores";
+import { FastLinks, FooterTitles } from '@/components'
+import { useTemplateStore } from '@/stores'
 
-const templateStore = useTemplateStore();
+const templateStore = useTemplateStore()
 </script>
 <template>
   <div class="links">
@@ -31,7 +31,7 @@ const templateStore = useTemplateStore();
 }
 .footer-li {
   color: white;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   list-style: none;
   font-weight: 450;
   margin: 5px;
