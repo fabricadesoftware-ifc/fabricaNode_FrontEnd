@@ -2,12 +2,13 @@
 </script>
 
 <template>
-  <main class="about">
-    <h1>This is the about page</h1>
+  <main class="login">
+    <h1>This is the login page</h1>
   </main>
 </template>
+
 <style scoped>
-.about {
+.login {
   margin-top: 32px;
   text-align: center;
 }
