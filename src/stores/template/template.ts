@@ -55,19 +55,19 @@ export const useTemplateStore = defineStore('template', () => {
 
   const footerMidia = [
     {
-      img: '@/assets/logo-github.png',
+      img: 'github',
       link: 'https://github.com/fabricadesoftware-ifc'
     },
     {
-      img: '@/assets/logo-instagram.png',
+      img: 'instagram',
       link: 'https://www.instagram.com/fabricadesoftware.ifc/'
     },
     {
-      img: '@/assets/logo-linked-in.png',
+      img: 'linked-in',
       link: 'https://br.linkedin.com/company/fabricadesoftware-if'
     },
     {
-      img: '@/assets/logo-twitter.png',
+      img: 'twiter',
       link: 'https://x.com/FabSoftwareIFC'
     }
   ]
