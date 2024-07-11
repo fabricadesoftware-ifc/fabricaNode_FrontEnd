@@ -49,4 +49,14 @@ const templateStore = useTemplateStore();
   background-color: #fff;
   background-image: -webkit-linear-gradient(-22deg, #fff 50%, #22262f 50%);
 }
+@media (max-width:1450px) {
+    .title{
+        padding-left:130px;
+    }
+}
+@media (max-width:1370px) {
+    .title{
+        padding-left:110px;
+    }
+}
 </style>

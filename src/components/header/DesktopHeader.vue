@@ -36,19 +36,22 @@ const templateStore = useTemplateStore()
     margin: 0px 150px;
 }
 
-@media (max-width:1200px) {
+@media (max-width:1450px) {
     .routers-desktop {
-        margin: 0px 100px;
+        margin: 0px 70px;
+    }
+    .header-desktop {
+        padding: 15px 130px;
     }
 }
 
-@media (max-width:1050px) {
+@media (max-width:1370px) {
     .routers-desktop {
         margin: 0px 50px;
     }
 
     .header-desktop {
-        padding: 15px 35px;
+        padding: 15px 110px;
     }
 }
 </style>
