@@ -22,7 +22,8 @@ const templateStore = useTemplateStore()
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 35px;
+    height: 11vh;
+    padding: 15px 170px;
     background-color: white;
     border-bottom: 1px solid rgb(83, 83, 83);
 }
@@ -31,23 +32,26 @@ const templateStore = useTemplateStore()
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100vh;
+    width: 100%;
     margin: 0px 150px;
 }
 
-@media (max-width:1200px) {
+@media (max-width:1450px) {
     .routers-desktop {
-        margin: 0px 100px;
+        margin: 0px 70px;
+    }
+    .header-desktop {
+        padding: 15px 130px;
     }
 }
 
-@media (max-width:1050px) {
+@media (max-width:1370px) {
     .routers-desktop {
         margin: 0px 50px;
     }
 
     .header-desktop {
-        padding: 15px 35px;
+        padding: 15px 110px;
     }
 }
 </style>

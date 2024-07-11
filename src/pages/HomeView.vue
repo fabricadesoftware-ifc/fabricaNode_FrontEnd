@@ -1,31 +1,9 @@
-<script setup lang="ts">
-import { GraphContainer, PainelControl, DefaultHeader } from '@/components';
-
-import { useAuth, useSetGraph } from '@/composables';
-import { useGraphStore } from '@/stores';
-
-const { configs } = useGraphStore();
-
-const { currentConnections } = useSetGraph();
-useAuth();
+<script lang="ts" setup>
+import { DefaultHeader, DefaultHome } from "@/components";
 </script>
-
 <template>
-  <div>
-    <DefaultHeader/>
-      <div class="container">
-        <GraphContainer :nodes="currentConnections.nodes" :edges="currentConnections.edges" :configs="configs"/>
-      </div>
-  </div>
+  <DefaultHeader />
+  <DefaultHome />
 </template>
 
-<style scoped>
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
-  overflow: hidden;
-}
-</style>
+<style scoped></style>
