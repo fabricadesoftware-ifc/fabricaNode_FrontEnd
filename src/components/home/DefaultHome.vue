@@ -32,7 +32,6 @@ const templateStore = useTemplateStore();
       <GraphImage />
     </div>
   </div>
-  <DefaultFooter />
 </template>
 
 <style scoped>

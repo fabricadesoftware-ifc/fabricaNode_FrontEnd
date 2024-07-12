@@ -1,9 +1,6 @@
 <script lang="ts" setup>
-import { DefaultHeader, DefaultHome } from "@/components";
+import { DefaultHome } from "@/components";
 </script>
 <template>
-  <DefaultHeader />
   <DefaultHome />
 </template>
-
-<style scoped></style>
