@@ -22,6 +22,7 @@
     "v-network-graph": "^0.9.15",
     "vite-plugin-pwa": "^0.20.0",
     "vue": "^3.4.29",
+    "vue-material-design-icons": "^5.2.0",
     "vue-router": "^4.3.3",
     "workbox-precaching": "^7.1.0"
   },

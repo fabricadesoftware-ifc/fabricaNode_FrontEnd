@@ -1,5 +1,5 @@
 import GraphContainer from "./graph/GraphContainer.vue";
-import NodeLabel from "./graph/label/NodeLabel.vue";
+import NodeLabel from "./graph/label/DefaultLabel.vue";
 import PainelControl from "./painel/PainelControl.vue";
 import DesktopHeader from './header/DesktopHeader.vue';
 import MobileHeader from './header/MobileHeader.vue';
@@ -19,6 +19,9 @@ import DescriptionTitle from './home/titles/description/DescriptionTitle.vue';
 import ButtonGraph from './home/button/ButtonGraph.vue';
 import GraphImage from './home/image/GraphImage.vue';
 import DefaultHome from './home/DefaultHome.vue';
+import CategoryLabel from './graph/label/category/CategoryLabel.vue'
+import ArticleName from './graph/label/name/ArticleName.vue'
+import AuthorName from './graph/label/author/AuthorName.vue'
 
 export {
     GraphContainer,
@@ -30,6 +33,9 @@ export {
     LoginButton,
     DefaultHeader,
     NodeLabel,
+    CategoryLabel,
+    ArticleName,
+    AuthorName,
     DefaultFooter,
     TitlesHome,
     DescriptionTitle,
