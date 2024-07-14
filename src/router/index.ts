@@ -15,22 +15,22 @@ const router = createRouter({
         {
           path: '/about',
           name: 'about',
-          component: () => import('../pages/AboutView.vue'),
+          component: () => import('../pages/DevView.vue'),
         },
         {
           path: '/article',
           name: 'article',
-          component: () => import('../pages/ArticleView.vue'),
+          component: () => import('../pages/DevView.vue'),
         },
         {
           path: '/author',
           name: 'author',
-          component: () => import('../pages/AuthorView.vue'),
+          component: () => import('../pages/DevView.vue'),
         },
         {
           path: '/favorite',
           name: 'favorite',
-          component: () => import('../pages/FavoriteView.vue'),
+          component: () => import('../pages/DevView.vue'),
           meta: {
             requiresAuth: true
           }
@@ -38,12 +38,12 @@ const router = createRouter({
         {
           path: '/profile',
           name: 'profile',
-          component: () => import('../pages/ProfileView.vue'), 
+          component: () => import('../pages/DevView.vue'),
           meta: {
             requiresAuth: true
           }
         },
-     
+
       ],
     },
     {
@@ -59,14 +59,8 @@ const router = createRouter({
     },
     {
       path: '/login',
-      component: () => import('../layouts/BlankLayout.vue'),
-      children: [
-        {
-          path: '/',
-          name: 'login',
-          component: () => import('../pages/LoginView.vue'),
-        },
-      ]
+      name: 'login',
+      component: () => import('../pages/LoginView.vue'),
     }
   ]
 })
