@@ -24,6 +24,7 @@
     "vue": "^3.4.29",
     "vue-material-design-icons": "^5.2.0",
     "vue-router": "^4.3.3",
+    "vue3-toastify": "^0.2.2",
     "workbox-precaching": "^7.1.0"
   },
   "devDependencies": {
