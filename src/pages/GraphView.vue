@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { GraphContainer, PainelControl, DefaultHeader } from '@/components';
+import { GraphContainer } from '@/components';
 
 import { useAuth, useSetGraph } from '@/composables';
 import { useGraphStore } from '@/stores';
@@ -12,7 +12,6 @@ useAuth();
 
 <template>
   <div>
-    <DefaultHeader/>
       <div class="container">
         <GraphContainer :nodes="currentConnections.nodes" :edges="currentConnections.edges" :configs="configs"/>
       </div>

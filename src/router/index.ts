@@ -5,49 +5,68 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: () => import('../pages/HomeView.vue')
+      component: () => import('../layouts/DefaultLayout.vue'),
+      children: [
+        {
+          path: '/',
+          name: 'home',
+          component: () => import('../pages/HomeView.vue'),
+        },
+        {
+          path: '/about',
+          name: 'about',
+          component: () => import('../pages/AboutView.vue'),
+        },
+        {
+          path: '/article',
+          name: 'article',
+          component: () => import('../pages/ArticleView.vue'),
+        },
+        {
+          path: '/author',
+          name: 'author',
+          component: () => import('../pages/AuthorView.vue'),
+        },
+        {
+          path: '/favorite',
+          name: 'favorite',
+          component: () => import('../pages/FavoriteView.vue'),
+          meta: {
+            requiresAuth: true
+          }
+        },
+        {
+          path: '/profile',
+          name: 'profile',
+          component: () => import('../pages/ProfileView.vue'), 
+          meta: {
+            requiresAuth: true
+          }
+        },
+     
+      ],
     },
     {
       path: '/graph',
-      name: 'graph',
-      component: () => import('../pages/GraphView.vue')
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: () => import('../pages/AboutView.vue')
-    },
-    {
-      path: '/article',
-      name: 'article',
-      component: () => import('../pages/ArticleView.vue')
-    },
-    {
-      path: '/author',
-      name: 'author',
-      component: () => import('../pages/AuthorView.vue')
-    },
-    {
-      path: '/favorite',
-      name: 'favorite',
-      component: () => import('../pages/FavoriteView.vue'),
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
-      path: '/profile',
-      name: 'profile',
-      component: () => import('../pages/ProfileView.vue'),
-      meta: {
-        requiresAuth: true
-      }
+      component: () => import('../layouts/GraphLayout.vue'),
+      children: [
+        {
+          path: '/',
+          name: 'graph',
+          component: () => import('../pages/GraphView.vue'),
+        },
+      ]
     },
     {
       path: '/login',
-      name: 'login',
-      component: () => import('../pages/LoginView.vue')
+      component: () => import('../layouts/BlankLayout.vue'),
+      children: [
+        {
+          path: '/',
+          name: 'login',
+          component: () => import('../pages/LoginView.vue'),
+        },
+      ]
     }
   ]
 })
