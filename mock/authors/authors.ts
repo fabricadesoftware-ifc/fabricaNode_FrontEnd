@@ -72,3 +72,5 @@ const authors = [
         name: 'Lucas Antonete',
     }
 ]
+
+export { authors }
