@@ -1,5 +1,6 @@
-import { articles } from "./articles/articles";
+import { publications } from "./publications/publications";
 import { authors } from "./authors/authors";
 import { categories } from "./categories/categories";
+import { keywords } from "./keywords/keywords";
 
-export { articles, authors, categories };
+export { publications, authors, categories, keywords };
