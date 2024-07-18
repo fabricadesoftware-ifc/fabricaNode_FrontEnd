@@ -10,10 +10,10 @@ defineProps({
 <style scoped>
 .title-description {
   font-family: "Montserrat", sans-serif;
-  font-size: 25px;
-  font-weight: 400;
-  width: 460px;
-  color: #ea6e18;
+  font-size: 16px;
+  font-weight: 450;
+  width: 400px;
+  color: #575757;
   margin: 20px 0px;
 }
 </style>

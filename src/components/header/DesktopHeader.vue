@@ -9,31 +9,42 @@ const templateStore = useTemplateStore()
 <template>
     <div class="header-desktop">
         <TextLogo />
+        <div class="routers">
         <ul class="routers-desktop">
             <ListTitles class="router-link" v-for="(text, index) in templateStore.titles" :key="index" :title="text.text" :link="text.link" />
         </ul>
+        </div>
         <LoginButton />
     </div>
 </template>
 
 
 <style scoped>
+.routers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 .header-desktop {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 11vh;
-    padding: 15px 170px;
+    height: 14vh;
+    padding: 15px 100px;
     background-color: white;
-    border-bottom: 1px solid rgb(83, 83, 83);
+    z-index:4;
+    width:100vw;
+    position: fixed;
+    top:0;
+    left:0;
 }
 
 .routers-desktop {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
-    margin: 0px 150px;
+    width: 60vh;
 }
 
 @media (max-width:1450px) {

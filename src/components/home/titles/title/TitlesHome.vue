@@ -7,10 +7,7 @@ defineProps({
 </script>
 <template>
   <div class="titles-container">
-    <h1 class="title-conecting">{{ FirstTitle }}</h1>
-    <h1 class="title-knowledge">{{ SecondTitle }}</h1>
-    <div class="hover-knowledge"></div>
-    <h1 class="title-academic">{{ ThirdTitle }}</h1>
+    <h1 class="title-home">{{ FirstTitle }} {{ SecondTitle }} {{ ThirdTitle }}</h1>
   </div>
 </template>
 
@@ -20,35 +17,19 @@ defineProps({
   width: min-content;
 }
 
-.title-conecting {
+.title-home {
+  width: min-content;
+  background-image: linear-gradient(#1e1e1e, #636363);
+  background-clip: text;
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
   z-index: 2;
   font-family: "Montserrat", sans-serif;
-  font-size: 38px;
-  font-weight: 400;
+  font-size: 100px;
+  font-weight: bold;
   position: relative;
+  margin-top:70px;
+  line-height: 100px;
 }
 
-.hover-knowledge {
-  z-index: 1;
-  display: block;
-  background-color: #4a4aeb38;
-  width: 100%;
-  height: 18px;
-  margin-top: -26px;
-}
-
-.title-knowledge {
-  font-family: "Montserrat", sans-serif;
-  font-size: 48px;
-  font-weight: 400;
-}
-
-.title-academic {
-  display: block;
-  justify-self: end;
-  font-family: "Montserrat", sans-serif;
-  font-size: 28px;
-  font-weight: 400;
-  width: max-content;
-}
 </style>

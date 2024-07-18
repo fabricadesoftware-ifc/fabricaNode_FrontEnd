@@ -7,30 +7,30 @@ export const useTemplateStore = defineStore('template', () => {
 
   const titles = [
     {
-      text: 'HOME',
+      text: 'Home',
       link: '/'
     },
     {
-      text: 'PUBLICAÇÕES',
+      text: 'Publicações',
       link: '/article'
     },
     {
-      text: 'AUTORES',
+      text: 'Autores',
       link: '/author'
     },
     {
-      text: 'SOBRE',
+      text: 'Sobre',
       link: '/about'
     }
   ]
 
   const homeTitles = [
     {
-      firstTitle: 'conectando',
+      firstTitle: 'CONECTANDO',
       secondTitle: 'CONHECIMENTO',
-      thirdTitle: 'acadêmico',
+      thirdTitle: 'ACADÊMICO',
       subtitle:
-        'publicações acadêmicas conectadas de forma intuitiva, ultilizando redes especializadas, facilitando o acesso ao conhecimento.'
+        'Publicações acadêmicas conectadas de forma intuitiva, ultilizando redes especializadas, facilitando o acesso ao conhecimento.'
     }
   ]
 

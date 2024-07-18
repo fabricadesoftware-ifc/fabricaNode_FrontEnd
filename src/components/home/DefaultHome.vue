@@ -11,7 +11,6 @@ import { useTemplateStore } from "@/stores";
 const templateStore = useTemplateStore();
 </script>
 <template>
-  <div>
     <div class="initial-page">
       <div class="title">
         <TitlesHome
@@ -31,22 +30,20 @@ const templateStore = useTemplateStore();
       </div>
       <GraphImage />
     </div>
-  </div>
 </template>
 
 <style scoped>
 .title {
   width: 50vw;
-  padding-left: 170px;
+  padding-left: 100px;
 }
 .initial-page {
   display: flex;
-  align-items: center;
   justify-content: space-around;
+  margin-top: 11vh;
   width: 100%;
   height: 89vh;
   background-color: #fff;
-  background-image: -webkit-linear-gradient(-22deg, #fff 50%, #22262f 50%);
 }
 @media (max-width:1450px) {
     .title{
