@@ -7,7 +7,7 @@ const nodeStore = useNodeStore();
 <template>
     <div class="category-position">
         <div class="node-category" v-for="(categoria, index) in nodeStore.currentNode.node.categories" :key="index">
-            {{ categoria }}
+            {{ categoria.name }}
         </div>
     </div>
 </template>

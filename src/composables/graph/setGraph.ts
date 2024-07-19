@@ -2,23 +2,16 @@ import { onMounted, reactive } from 'vue';
 import { useGraphStore, usePublicationStore } from '@/stores';
 import { generateGraphFromArticles } from '@/utils'
 
-import { publications } from '../../../mock';
-
 export function useSetGraph() {
+    const { populatePublications, entirePublications } = usePublicationStore();
     const { setGraphData } = useGraphStore();
-    const { edges, nodes } = generateGraphFromArticles(publications)
 
-    const { populatePublications } = usePublicationStore()
+    populatePublications();
 
+    const { edges, nodes } = generateGraphFromArticles(entirePublications);
     const currentConnections = reactive({ nodes, edges });
 
-
-    onMounted(() => {
-        populatePublications()
-        setGraphData(nodes, edges)
-    }
-
-    )
+    onMounted(() => setGraphData(nodes, edges));
 
     return { currentConnections };
-}
+};
