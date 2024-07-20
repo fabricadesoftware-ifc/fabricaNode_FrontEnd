@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { VitePWA } from 'vite-plugin-pwa';
+import VueDevTools from 'vite-plugin-vue-devtools';
 
 export default defineConfig({
   plugins: [
@@ -42,6 +43,7 @@ export default defineConfig({
         enabled: true,
       },
     }),
+    VueDevTools()
   ],
   resolve: {
     alias: {

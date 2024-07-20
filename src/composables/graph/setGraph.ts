@@ -11,6 +11,7 @@ export function useSetGraph() {
     const { edges, nodes } = generateGraphFromArticles(entirePublications);
     const currentConnections = reactive({ nodes, edges });
 
+
     onMounted(() => setGraphData(nodes, edges));
 
     return { currentConnections };

@@ -60,7 +60,16 @@ const categories = [
     {
         id: 15,
         name: "Meio ambiente"
+    },
+    {
+        id: 16,
+        name: "teste1"
+    },
+    {
+        id: 17,
+        name: "teste2"
     }
+
 ]
 
 export { categories }
