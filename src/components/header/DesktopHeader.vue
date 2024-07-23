@@ -1,49 +1,20 @@
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted} from 'vue'
 import { ListTitles, TextLogo, LoginButton } from '@/components'
 import { useTemplateStore } from '@/stores'
+import { useNavbar } from '@/composables';
 
-const templateStore = useTemplateStore()
-const navbar = ref(true)
-
-if (window.location.pathname === '/graph') {
-  navbar.value = false
-}
-
-function scrollFunction(): void {
-  if (window.location.pathname !== '/') {
-    navbar.value = true
-  }
-  if (window.location.pathname !== '/graph' && window.innerWidth > 1280) {
-    const scrollTop =
-      window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0
-
-    if (scrollTop > 100) {
-      navbar.value = false
-    } else {
-      navbar.value = true
-    }
-  }
-}
-
-onMounted(() => {
-  window.addEventListener('load', scrollFunction)
-  window.addEventListener('scroll', scrollFunction)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', scrollFunction)
-})
+const {titles, navbar} = useTemplateStore()
+useNavbar()
 </script>
 
 <template>
-  <div :class="navbar ? 'header-desktop' : 'header-desktop-active'">
+  <div :class="navbar.nav ? 'header-desktop' : 'header-desktop-active'">
     <TextLogo />
     <div class="routers">
       <ul class="routers-desktop">
         <ListTitles
           class="router-link"
-          v-for="(text, index) in templateStore.titles"
+          v-for="(text, index) in titles"
           :key="index"
           :title="text.text"
           :link="text.link"

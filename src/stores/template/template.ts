@@ -1,9 +1,10 @@
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useTemplateStore = defineStore('template', () => {
   const tooltipOpacity = ref(0)
   const menuActive = ref(false)
+  const navbar = reactive({nav:true})
 
   const titles = [
     {
@@ -79,6 +80,7 @@ export const useTemplateStore = defineStore('template', () => {
     homeTitles,
     footerTitles,
     footerContact,
-    footerMidia
+    footerMidia,
+    navbar
   }
 })
