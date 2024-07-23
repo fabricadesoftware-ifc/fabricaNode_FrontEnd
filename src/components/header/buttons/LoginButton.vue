@@ -7,8 +7,9 @@
 <style scoped>
 .login-button {
     font-family: "Montserrat", sans-serif;
-    color: white;
-    background-color: #267A7A;
+    background-color: rgba(240, 248, 255, 0);
+    color: #267A7A;
+    border: 1.6px solid #267A7A;
     border-radius: 111.11px;
     padding: 17px 30px;
     font-size: 16px;
@@ -21,7 +22,7 @@
 }
 
 .login-button:hover{
-    background-color: #225c5c;
+    background-color: #ebedf0;
     transition: 0.5s;
 }
 @media (max-width:1000px) {
