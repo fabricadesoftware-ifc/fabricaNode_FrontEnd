@@ -78,10 +78,10 @@ onUnmounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 14vh;
+  height: 12vh;
   padding: 15px 100px;
   background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(99, 99, 99);
+  border-bottom: 1.5px solid #cccccc;
   z-index: 4;
   width: 100vw;
   position: fixed;
