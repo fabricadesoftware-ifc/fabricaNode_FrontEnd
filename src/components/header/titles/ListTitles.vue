@@ -15,7 +15,8 @@ defineProps({
 .routers-desktop li {
   font-family: 'Montserrat', sans-serif;
   list-style: none;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 450;
   color: black;
   position: relative;
 }
@@ -23,7 +24,7 @@ defineProps({
 .routers-mobile li {
   font-family: 'Montserrat', sans-serif;
   list-style: none;
-  font-size: 18px;
+  font-size: 16px;
   color: black;
   display: block;
   text-align: center;

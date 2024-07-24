@@ -1,28 +1,10 @@
 <template>
     <div class="logo">
-        <h1 class="logo-fabrica">FABRICA</h1>
-        <h1 class="logo-node">NODE</h1>
+    <img src="@/assets/logo.png" class="logo">
     </div>
 </template>
 <style scoped>
 .logo {
-    display: flex;
-    width: min-content;
-    align-self: center;
-}
-
-h1 {
-    font-family: "Montserrat", sans-serif;
-}
-
-.logo-fabrica {
-    font-size: 30px;
-    font-weight: 500;
-}
-
-.logo-node {
-    font-size: 30px;
-    font-weight: 800;
-    color: #267A7A;
+    width: 200px;
 }
 </style>

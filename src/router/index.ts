@@ -51,7 +51,7 @@ const router = createRouter({
       component: () => import('../layouts/GraphLayout.vue'),
       children: [
         {
-          path: '/',
+          path: '/graph',
           name: 'graph',
           component: () => import('../pages/GraphView.vue'),
         },

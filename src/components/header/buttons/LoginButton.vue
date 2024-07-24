@@ -1,17 +1,20 @@
 <template>
     <RouterLink class="router-link" to="/login">
-        <button class="login-button">ENTRAR</button>
+        <button class="login-button">Cadastre-se</button>
     </RouterLink>
 </template>
 
 <style scoped>
 .login-button {
     font-family: "Montserrat", sans-serif;
-    color: white;
-    background-color: #4A4BEB;
-    border-radius: 15px;
-    padding: 10px;
-    font-size: 18px;
+    background-color: rgba(240, 248, 255, 0);
+    color: #267A7A;
+    border: 1.6px solid #267A7A;
+    border-radius: 111.11px;
+    padding: 17px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    width: max-content;
 }
 
 .router-link {
@@ -19,7 +22,7 @@
 }
 
 .login-button:hover{
-    background-color: #267A7A;
+    background-color: #ebedf0;
     transition: 0.5s;
 }
 @media (max-width:1000px) {

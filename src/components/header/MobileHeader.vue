@@ -33,7 +33,7 @@ const templateStore = useTemplateStore();
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-
+    position: fixed;
     padding: 20px;
     background-color: white;
     border-bottom: 1px solid rgb(83, 83, 83);

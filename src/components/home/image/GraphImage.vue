@@ -1,6 +1,6 @@
 <template>
             <div class="grafo-img">
-                <img src="@/assets/grafo.png">
+                <img src="../../../assets/grafo.png">
             </div>
 </template>
 
@@ -9,9 +9,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50vw;
+    width: 70vw;
+    overflow-x:hidden ;
 }
 .grafo-img > img{
-    width: 40vw;
+    margin-top:50px;
+    margin-left:45px;
+    width: 47vw;
 }
 </style>
