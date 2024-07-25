@@ -1,12 +1,13 @@
 <script lang="ts" setup>
-import { useNodeStore } from '@/stores';
+defineProps({
+  name: String
+})
 
-const nodeStore = useNodeStore();
 </script>
 
 <template>
      <div class="node-name">
-      {{ nodeStore.currentNode.node.name }}
+      {{ name }}
     </div>
 </template>
 
