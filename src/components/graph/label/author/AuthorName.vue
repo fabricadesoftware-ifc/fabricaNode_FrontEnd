@@ -1,13 +1,10 @@
 <script lang="ts" setup>
-import { computed } from 'vue';
 import { AccountOutline } from '@/components/icons';
-import { useNodeStore } from '@/stores';
+defineProps ({
+  authorNames: String,
+}
+)
 
-const nodeStore = useNodeStore();
-
-const authorNames = computed(() => {
-  return nodeStore?.currentNode?.node?.authors?.map(author => author.name).join(', ') || '';
-});
 </script>
 
 <template>
