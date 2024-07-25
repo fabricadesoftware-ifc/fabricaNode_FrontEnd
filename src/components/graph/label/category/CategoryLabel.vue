@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { useNodeStore } from '@/stores';
-
-const nodeStore = useNodeStore();
+defineProps({
+    categories: Array
+})
 </script>
 
 <template>
     <div class="category-position">
-        <div class="node-category" v-for="(categoria, index) in nodeStore.currentNode.node.categories" :key="index">
+        <div class="node-category" v-for="(categoria, index) in categories" :key="index">
             {{ categoria.name }}
         </div>
     </div>
