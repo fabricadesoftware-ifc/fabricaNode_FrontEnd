@@ -1,9 +1,13 @@
 <script lang="ts" setup>
+import { computed } from 'vue';
 import { useNodeStore, useTemplateStore } from '@/stores';
 import { CategoryLabel, ArticleName, AuthorName } from '@/components';
 
 const nodeStore = useNodeStore();
 const templateStore = useTemplateStore();
+const authorNames = computed(() => {
+  return nodeStore?.currentNode?.node?.authors?.map(author => author.name).join(', ') || '';
+});
 </script>
 
 <template>
@@ -13,9 +17,9 @@ const templateStore = useTemplateStore();
     top: nodeStore.currentNodePosition.y + 'px',
     left: nodeStore.currentNodePosition.x + 'px',
   }">
-    <CategoryLabel />
-    <ArticleName />
-    <AuthorName />
+    <CategoryLabel :categories="nodeStore.currentNode.node.categories"/>
+    <ArticleName :name="nodeStore.currentNode.node.name"/>
+    <AuthorName :authorNames="authorNames" />
   </div>
 </template>
 
