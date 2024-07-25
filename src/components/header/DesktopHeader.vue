@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { ListTitles, TextLogo, LoginButton } from '@/components'
+import { ListTitles, TextLogo, LoginButton, UserProfile } from '@/components'
 import { useTemplateStore } from '@/stores'
-import { useNavbar } from '@/composables';
+import { useNavbar, useAuth } from '@/composables';
 
 const {titles, navbar} = useTemplateStore()
+const { isLogged } = useAuth()
 useNavbar()
 </script>
 
@@ -21,7 +22,8 @@ useNavbar()
         />
       </ul>
     </div>
-    <LoginButton />
+    <LoginButton v-if='!isLogged'/>
+    <UserProfile v-else/>
   </div>
 </template>
 

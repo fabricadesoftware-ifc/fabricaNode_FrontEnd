@@ -22,6 +22,8 @@ import DefaultHome from './home/DefaultHome.vue';
 import CategoryLabel from './graph/label/category/CategoryLabel.vue'
 import ArticleName from './graph/label/name/ArticleName.vue'
 import AuthorName from './graph/label/author/AuthorName.vue'
+import UserProfile from './header/profile/UserProfile.vue'
+import UserPhoto from './header/profile/photo/UserPhoto.vue'
 
 export {
     GraphContainer,
@@ -47,5 +49,7 @@ export {
     LinksHeader,
     LogoFabrica,
     FastLinks,
-    FooterTitles
+    FooterTitles,
+    UserProfile,
+    UserPhoto
 };
