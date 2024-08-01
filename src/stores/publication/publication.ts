@@ -1,8 +1,8 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-import { PublicationService, AuthorService, CategoryService, KeywordService } from '@/services';
-import type { IPublication, IAuthor, ICategory, IKeyword } from '@/interfaces'
+import { PublicationService, AuthorService, CategoryService, KeywordService, TypeService } from '@/services';
+import type { IPublication, IAuthor, ICategory, IKeyword, IType } from '@/interfaces'
 
 export const usePublicationStore = defineStore('publication', () => {
     const entirePublications = ref<IPublication[]>([])
@@ -13,6 +13,7 @@ export const usePublicationStore = defineStore('publication', () => {
     const authorService = new AuthorService();
     const categoryService = new CategoryService();
     const keywordService = new KeywordService();
+    const typesServise = new TypeService()
 
     async function populatePublications() {
         try {
@@ -58,7 +59,6 @@ export const usePublicationStore = defineStore('publication', () => {
                     categories: categories,
                     keywords: keywords
                 }
-
                 entirePublications.value.push(fullPublication)
             }
         } catch (error) {
