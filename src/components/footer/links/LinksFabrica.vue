@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import GithubImg from '@/assets/logo-github.png'
-import InstagramImg from '@/assets/logo-instagram.png'
-import LinkedIn from '@/assets/logo-linked-in.png'
-import ImgTwiter from '@/assets/logo-twiter.png'
+import GithubImg from '@/assets/images/logo-github.png'
+import InstagramImg from '@/assets/images/logo-instagram.png'
+import LinkedIn from '@/assets/images/logo-linked-in.png'
+import ImgTwiter from '@/assets/images/logo-twiter.png'
 import { useTemplateStore } from '@/stores'
 
 const templateStore = useTemplateStore()

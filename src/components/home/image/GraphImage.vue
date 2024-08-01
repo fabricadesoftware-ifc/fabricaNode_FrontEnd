@@ -1,6 +1,6 @@
 <template>
             <div class="grafo-img">
-                <img src="../../../assets/grafo.png">
+                <img src="../../../assets/images/grafo.png">
             </div>
 </template>
 

@@ -10,13 +10,13 @@ const templateStore = useTemplateStore();
         <div class="header-mobile">
             <TextLogo />
             <div class="menu-icon">
-                <img @click="templateStore.menuActive = !templateStore.menuActive" src="@/assets/menu-aberto.png" class="img-menu-icon">
+                <img @click="templateStore.menuActive = !templateStore.menuActive" src="@/assets/images/menu-aberto.png" class="img-menu-icon">
             </div>
         </div>
         <div class="menu-active" v-if="templateStore.menuActive">
             <div class="menu-mobile">
                 <div class="menu-icon">
-                    <img class="close" @click="templateStore.menuActive = !templateStore.menuActive" src="@/assets/x.png" width="30px">
+                    <img class="close" @click="templateStore.menuActive = !templateStore.menuActive" src="@/assets/images/x.png" width="30px">
                 </div>
                 <ul class="routers-mobile">
                     <ListTitles class="router-link"  v-for="(text, index) in templateStore.titles" :key="index"
