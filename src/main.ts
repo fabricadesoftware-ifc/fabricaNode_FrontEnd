@@ -1,6 +1,8 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 
+import { usePublicationStore } from './stores';
+
 import VNetworkGraph from "v-network-graph";
 
 import './assets/main.css';
@@ -15,5 +17,8 @@ const app = createApp(App);
 app.use(createPinia());
 app.use(router);
 app.use(VNetworkGraph);
+
+const { populatePublications } = usePublicationStore()
+populatePublications()
 
 app.mount('#app');

@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 import { PublicationService, AuthorService, CategoryService, KeywordService } from '@/services';
@@ -16,6 +16,7 @@ export const usePublicationStore = defineStore('publication', () => {
 
     async function populatePublications() {
         try {
+            entirePublications.value = []
             publications.value = publicationService.getPublications()
 
             for (let i = 0; i < publications.value.length; i++) {
