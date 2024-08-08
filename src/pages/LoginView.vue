@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import '@passageidentity/passage-elements/passage-auth'
+import '@passageidentity/passage-elements/passage-auth';
 </script>
 
 <template>

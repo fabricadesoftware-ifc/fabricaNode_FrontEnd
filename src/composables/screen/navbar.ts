@@ -1,5 +1,5 @@
 import { onMounted, onUnmounted, ref } from 'vue';
-import { useTemplateStore } from '@/stores'
+import { useTemplateStore } from '@/stores';
 
 export function useNavbar() {
     const templateStore = useTemplateStore()
@@ -32,4 +32,4 @@ export function useNavbar() {
         window.removeEventListener('scroll', scrollFunction)
       })
 
-}
+};

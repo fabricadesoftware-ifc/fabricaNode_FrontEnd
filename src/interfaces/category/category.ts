@@ -3,4 +3,4 @@ export interface ICategory {
     name: string;
     color: string;
     favorite: boolean;
-}
+};

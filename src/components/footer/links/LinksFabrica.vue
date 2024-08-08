@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-import GithubImg from '@/assets/images/logo-github.png'
-import InstagramImg from '@/assets/images/logo-instagram.png'
-import LinkedIn from '@/assets/images/logo-linked-in.png'
-import ImgTwiter from '@/assets/images/logo-twiter.png'
-import { useTemplateStore } from '@/stores'
+import GithubImg from '@/assets/images/logo-github.png';
+import InstagramImg from '@/assets/images/logo-instagram.png';
+import LinkedIn from '@/assets/images/logo-linked-in.png';
+import ImgTwiter from '@/assets/images/logo-twiter.png';
+import { useTemplateStore } from '@/stores';
 
-const templateStore = useTemplateStore()
+const templateStore = useTemplateStore();
 
 defineProps({
   img: String,
   link: String
-})
+});
 </script>
 <template>
   <div class="container-midia">

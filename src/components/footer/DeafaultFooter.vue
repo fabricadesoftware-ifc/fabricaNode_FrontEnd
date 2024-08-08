@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { FabricaContact, LinksFabrica, LinksHeader, LogoFabrica } from "@/components";
+import { FabricaContact, LinksFabrica, LinksHeader, LogoFabrica } from '@/components';
 </script>
 <template>
   <footer>

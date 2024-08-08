@@ -1,10 +1,9 @@
 <script lang="ts" setup>
 import { AccountOutline } from '@/components/icons';
+
 defineProps ({
   authorNames: String,
-}
-)
-
+});
 </script>
 
 <template>

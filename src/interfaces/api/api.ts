@@ -6,4 +6,4 @@ export interface IApi {
   post?<T = any>(url: string, data: any): Promise<AxiosResponse<T>>;
   patch?<T = any>(url: string, data: any): Promise<AxiosResponse<T>>;
   put?<T = any>(url: string, data: any): Promise<AxiosResponse<T>>;
-}
+};

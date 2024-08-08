@@ -6,8 +6,7 @@
 </template>
 <style scoped>
 .img-logo-fabrica,
-.links,
-.contato {
+.links {
   display: flex;
   min-height: 120px;
   width: 26.66vw;

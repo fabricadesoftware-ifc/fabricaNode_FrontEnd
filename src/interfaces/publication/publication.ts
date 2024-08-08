@@ -8,4 +8,4 @@ export interface IPublication {
     categories: string[];
     type: string;
     favorite: boolean;
-}
+};

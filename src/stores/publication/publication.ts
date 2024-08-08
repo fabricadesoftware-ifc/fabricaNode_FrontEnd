@@ -1,8 +1,8 @@
-import { ref } from 'vue'
-import { defineStore } from 'pinia'
+import { ref } from 'vue';
+import { defineStore } from 'pinia';
 
 import { PublicationService, AuthorService, CategoryService, KeywordService, TypeService } from '@/services';
-import type { IPublication, IAuthor, ICategory, IKeyword, IType } from '@/interfaces'
+import type { IPublication, IAuthor, ICategory, IKeyword, IType } from '@/interfaces';
 
 export const usePublicationStore = defineStore('publication', () => {
     const entirePublications = ref<IPublication[]>([])
@@ -74,4 +74,4 @@ export const usePublicationStore = defineStore('publication', () => {
         publication,
         populatePublications
     }
-})
+});
