@@ -13,7 +13,7 @@ export const usePublicationStore = defineStore('publication', () => {
     const authorService = new AuthorService();
     const categoryService = new CategoryService();
     const keywordService = new KeywordService();
-    const typesServise = new TypeService()
+    const typeService = new TypeService()
 
     async function populatePublications() {
         try {
@@ -52,14 +52,17 @@ export const usePublicationStore = defineStore('publication', () => {
                         throw new Error(`Keyword not found: ${keywordId}`);
                     })
                 )
+                const type: IType | undefined = typeService.getTypeById(Number(currentPublication.type));
 
                 const fullPublication: IPublication = {
                     ...currentPublication,
-                    authors: authors,
-                    categories: categories,
-                    keywords: keywords
+                    authors,
+                    categories,
+                    keywords,
+                    type
                 }
                 entirePublications.value.push(fullPublication)
+                console.log(fullPublication)
             }
         } catch (error) {
             console.log(error)
