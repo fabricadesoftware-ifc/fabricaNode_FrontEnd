@@ -1,4 +1,5 @@
 export interface IKeyword {
-    id: number,
-    key: string
+    id: number;
+    key: string;
+    favorite: boolean;
 }
