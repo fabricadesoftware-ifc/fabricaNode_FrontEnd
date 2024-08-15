@@ -65,8 +65,7 @@ export const usePublicationStore = defineStore('publication', () => {
             console.log(error)
         }
     }
-
-    return {
+        return {
         entirePublications,
         publications,
         publication,

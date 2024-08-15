@@ -6,8 +6,8 @@ defineProps({
 
 <template>
     <div class="category-position">
-        <div class="node-category" v-for="(categoria, index) in categories" :key="index">
-            {{ categoria.name }}
+        <div class="node-category" v-for="(category, index) in categories" :key="index">
+            {{ category.name }}
         </div>
     </div>
 </template>
