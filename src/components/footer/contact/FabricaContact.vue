@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { FooterTitles } from '@/components'
-import { useTemplateStore } from '@/stores'
+import { FooterTitles } from '@/components';
+import { useTemplateStore } from '@/stores';
 
-const templateStore = useTemplateStore()
+const templateStore = useTemplateStore();
 
 defineProps({
   text: String
-})
+});
 </script>
 <template>
   <div class="contact">

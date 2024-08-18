@@ -25,4 +25,4 @@ async function showMessage(message: any, type: any, time: number, position: any,
   })
 }
 
-export { showMessage }
+export { showMessage };

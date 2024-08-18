@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
 import { ArrowRight } from '@/components/icons';
-const router = useRouter()
+const router = useRouter();
 </script>
 <template>
   <button class="button-see-graph" @click="router.push({ name: 'graph' })">Ver grafo <ArrowRight size="30" class="arrow-right"/></button>

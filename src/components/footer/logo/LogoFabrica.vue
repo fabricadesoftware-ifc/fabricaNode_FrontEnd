@@ -1,13 +1,12 @@
 <script lang="ts" setup></script>
 <template>
   <div class="img-logo-fabrica">
-    <img src="@/assets/logo-fabrica-de-software.png" />
+    <img src="@/assets/images/logo-fabrica-de-software.png" />
   </div>
 </template>
 <style scoped>
 .img-logo-fabrica,
-.links,
-.contato {
+.links {
   display: flex;
   min-height: 120px;
   width: 26.66vw;

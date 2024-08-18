@@ -1,7 +1,7 @@
 <template>
     <main>
         <section>
-            <img src="../assets/construction.jpg" alt="" />
+            <img src="../assets/images/construction.jpg" alt="" />
             <h2>Ops! Estamos trabalhando nisso</h2>
             <p>Nossa página está passando por melhorias.</p>
         </section>

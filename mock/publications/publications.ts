@@ -6,7 +6,9 @@ const publications = [
         authors: ["1"],
         keywords: ["1", "2", "3"],
         categories: ["9", "10"],
-        resume: "Este artigo explora o uso de algoritmos genéticos na otimização de funções complexas."
+        resume: "Este artigo explora o uso de algoritmos genéticos na otimização de funções complexas.",
+        type: "1",
+        favorite: false
     },
     {
         id: 2,
@@ -15,7 +17,9 @@ const publications = [
         authors: ["2"],
         keywords: ["4", "5", "6"],
         categories: ["9"],
-        resume: "Uma visão geral sobre os conceitos básicos e aplicações da inteligência artificial."
+        resume: "Uma visão geral sobre os conceitos básicos e aplicações da inteligência artificial.",
+        type: "2",
+        favorite: false
     },
     {
         id: 3,
@@ -24,7 +28,9 @@ const publications = [
         authors: ["13", "14"],
         keywords: ["5", "7", "8"],
         categories: ["5"],
-        resume: "O artigo discute como técnicas de machine learning podem ser usadas para melhorar diagnósticos médicos."
+        resume: "O artigo discute como técnicas de machine learning podem ser usadas para melhorar diagnósticos médicos.",
+        type: "3",
+        favorite: false
     },
     {
         id: 4,
@@ -33,7 +39,9 @@ const publications = [
         authors: ["15", "16"],
         keywords: ["6", "9", "10"],
         categories: ["12"],
-        resume: "Explora o uso de redes neurais para previsões financeiras e de mercado."
+        resume: "Explora o uso de redes neurais para previsões financeiras e de mercado.",
+        type: "4",
+        favorite: false
     },
     {
         id: 5,
@@ -42,7 +50,9 @@ const publications = [
         authors: ["7"],
         keywords: ["11", "12", "13"],
         categories: ["9"],
-        resume: "Discute técnicas de deep learning aplicadas ao processamento e reconhecimento de imagens."
+        resume: "Discute técnicas de deep learning aplicadas ao processamento e reconhecimento de imagens.",
+        type: "1",
+        favorite: false
     },
     {
         id: 6,
@@ -51,7 +61,9 @@ const publications = [
         authors: ["17"],
         keywords: ["14", "15", "16"],
         categories: ["13"],
-        resume: "Uma análise dos sistemas embarcados que habilitam a Internet das Coisas (IoT)."
+        resume: "Uma análise dos sistemas embarcados que habilitam a Internet das Coisas (IoT).",
+        type: "2",
+        favorite: false
     },
     {
         id: 7,
@@ -60,7 +72,9 @@ const publications = [
         authors: ["14", "2"],
         keywords: ["17", "18", "19"],
         categories: ["9"],
-        resume: "Este artigo trata das técnicas e ferramentas para análise de grandes volumes de dados em tempo real."
+        resume: "Este artigo trata das técnicas e ferramentas para análise de grandes volumes de dados em tempo real.",
+        type: "2",
+        favorite: false
     },
     {
         id: 8,
@@ -69,7 +83,9 @@ const publications = [
         authors: ["5"],
         keywords: ["20", "21", "22"],
         categories: ["7"],
-        resume: "Investiga como a tecnologia blockchain pode ser usada para aumentar a segurança da informação."
+        resume: "Investiga como a tecnologia blockchain pode ser usada para aumentar a segurança da informação.",
+        type: "4",
+        favorite: false
     },
     {
         id: 9,
@@ -78,7 +94,9 @@ const publications = [
         authors: ["9", "10"],
         keywords: ["23", "24", "25"],
         categories: ["9"],
-        resume: "Uma introdução à computação quântica e seu potencial transformador na área de tecnologia."
+        resume: "Uma introdução à computação quântica e seu potencial transformador na área de tecnologia.",
+        type: "2",
+        favorite: false
     },
     {
         id: 10,
@@ -87,7 +105,9 @@ const publications = [
         authors: ["3", "5"],
         keywords: ["26", "5", "27"],
         categories: ["9"],
-        resume: "Uma análise detalhada dos principais algoritmos de aprendizado supervisionado e suas aplicações."
+        resume: "Uma análise detalhada dos principais algoritmos de aprendizado supervisionado e suas aplicações.",
+        type: "2",
+        favorite: false
     },
     {
         id: 11,
@@ -96,7 +116,9 @@ const publications = [
         authors: ["8", "11"],
         keywords: ["28", "29", "30"],
         categories: ["7"],
-        resume: "Explora técnicas e ferramentas para assegurar a segurança em redes de computadores."
+        resume: "Explora técnicas e ferramentas para assegurar a segurança em redes de computadores.",
+        type: "3",
+        favorite: false
     },
     {
         id: 12,
@@ -105,7 +127,9 @@ const publications = [
         authors: ["7"],
         keywords: ["31", "32", "33"],
         categories: ["17"],
-        resume: "Discute as tecnologias emergentes que estão moldando o futuro das cidades inteligentes."
+        resume: "Discute as tecnologias emergentes que estão moldando o futuro das cidades inteligentes.",
+        type: "2",
+        favorite: false
     },
     {
         id: 13,
@@ -114,7 +138,9 @@ const publications = [
         authors: ["13", "14"],
         keywords: ["34", "16", "35"],
         categories: ["13"],
-        resume: "Examina o uso de redes de sensores sem fio no contexto da Internet das Coisas (IoT)."
+        resume: "Examina o uso de redes de sensores sem fio no contexto da Internet das Coisas (IoT).",
+        type: "1",
+        favorite: false
     },
     {
         id: 14,
@@ -123,7 +149,9 @@ const publications = [
         authors: ["4", "5", "9", "11"],
         keywords: ["15", "36", "37"],
         categories: ["3"],
-        resume: "Discute como a IoT pode ser aplicada para melhorar práticas agrícolas e aumentar a produtividade."
+        resume: "Discute como a IoT pode ser aplicada para melhorar práticas agrícolas e aumentar a produtividade.",
+        type: "3",
+        favorite: false
     },
     {
         id: 15,
@@ -132,7 +160,9 @@ const publications = [
         authors: ["10", "11"],
         keywords: ["22", "21", "38"],
         categories: ["7"],
-        resume: "Explora técnicas avançadas de criptografia para proteção de dados sensíveis."
+        resume: "Explora técnicas avançadas de criptografia para proteção de dados sensíveis.",
+        type: "1",
+        favorite: false
     },
     {
         id: 16,
@@ -141,7 +171,9 @@ const publications = [
         authors: ["17"],
         keywords: ["13", "39", "4"],
         categories: ["6"],
-        resume: "Investiga como técnicas de visão computacional são aplicadas no desenvolvimento de sistemas robóticos."
+        resume: "Investiga como técnicas de visão computacional são aplicadas no desenvolvimento de sistemas robóticos.",
+        type: "3",
+        favorite: false
     },
     {
         id: 17,
@@ -150,7 +182,9 @@ const publications = [
         authors: ["4"],
         keywords: ["40", "41", "42"],
         categories: ["15"],
-        resume: "Discute a importância e as inovações em tecnologias verdes para a promoção de energia sustentável."
+        resume: "Discute a importância e as inovações em tecnologias verdes para a promoção de energia sustentável.",
+        type: "4",
+        favorite: false
     }
 ];
 

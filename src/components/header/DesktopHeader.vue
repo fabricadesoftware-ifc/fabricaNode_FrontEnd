@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { ListTitles, TextLogo, LoginButton, UserProfile } from '@/components'
-import { useTemplateStore } from '@/stores'
+import { ListTitles, TextLogo, LoginButton, UserProfile } from '@/components';
+import { useTemplateStore } from '@/stores';
 import { useNavbar, useAuth } from '@/composables';
 
-const {titles, navbar} = useTemplateStore()
-const { isLogged } = useAuth()
-useNavbar()
+const {titles, navbar} = useTemplateStore();
+const { isLogged } = useAuth();
+useNavbar();
 </script>
 
 <template>

@@ -1,5 +1,5 @@
-import { ref, reactive } from 'vue'
-import { defineStore } from 'pinia'
+import { ref, reactive } from 'vue';
+import { defineStore } from 'pinia';
 
 export const useTemplateStore = defineStore('template', () => {
   const tooltipOpacity = ref(0)
@@ -83,4 +83,4 @@ export const useTemplateStore = defineStore('template', () => {
     footerMidia,
     navbar
   }
-})
+});

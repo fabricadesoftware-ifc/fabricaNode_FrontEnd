@@ -1,8 +1,8 @@
-import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import { ref } from 'vue';
+import { defineStore } from 'pinia';
 
-import { PublicationService, AuthorService, CategoryService, KeywordService } from '@/services';
-import type { IPublication, IAuthor, ICategory, IKeyword } from '@/interfaces'
+import { PublicationService, AuthorService, CategoryService, KeywordService, TypeService } from '@/services';
+import type { IPublication, IAuthor, ICategory, IKeyword, IType } from '@/interfaces';
 
 export const usePublicationStore = defineStore('publication', () => {
     const entirePublications = ref<IPublication[]>([])
@@ -13,6 +13,7 @@ export const usePublicationStore = defineStore('publication', () => {
     const authorService = new AuthorService();
     const categoryService = new CategoryService();
     const keywordService = new KeywordService();
+    const typeService = new TypeService()
 
     async function populatePublications() {
         try {
@@ -51,15 +52,17 @@ export const usePublicationStore = defineStore('publication', () => {
                         throw new Error(`Keyword not found: ${keywordId}`);
                     })
                 )
+                const type: IType | undefined = typeService.getTypeById(Number(currentPublication.type));
 
                 const fullPublication: IPublication = {
                     ...currentPublication,
-                    authors: authors,
-                    categories: categories,
-                    keywords: keywords
+                    authors,
+                    categories,
+                    keywords,
+                    type
                 }
-
                 entirePublications.value.push(fullPublication)
+                console.log(fullPublication)
             }
         } catch (error) {
             console.log(error)
@@ -71,4 +74,4 @@ export const usePublicationStore = defineStore('publication', () => {
         publication,
         populatePublications
     }
-})
+});

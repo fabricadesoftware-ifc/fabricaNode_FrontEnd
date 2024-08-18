@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 defineProps({
   title: String,
-  link: String,
+  link: String
 });
 </script>
 <template>
@@ -12,7 +12,7 @@ defineProps({
 <style scoped>
 .footer-li {
   color: white;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   list-style: none;
   font-weight: 450;
   margin: 5px;

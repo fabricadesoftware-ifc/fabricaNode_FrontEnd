@@ -2,7 +2,7 @@
 defineProps({
   title: String,
   link: String
-})
+});
 </script>
 
 <template>

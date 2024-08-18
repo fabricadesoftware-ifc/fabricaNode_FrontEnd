@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { UserPhoto } from '@/components'
+import { UserPhoto } from '@/components';
 import { useRouter } from 'vue-router';
-const router = useRouter()
+const router = useRouter();
 </script>
 <template>
   <div class="user-profile" @click="router.push('/profile')">

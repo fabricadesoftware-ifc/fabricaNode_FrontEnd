@@ -19,11 +19,11 @@ import DescriptionTitle from './home/titles/description/DescriptionTitle.vue';
 import ButtonGraph from './home/button/ButtonGraph.vue';
 import GraphImage from './home/image/GraphImage.vue';
 import DefaultHome from './home/DefaultHome.vue';
-import CategoryLabel from './graph/label/category/CategoryLabel.vue'
-import ArticleName from './graph/label/name/ArticleName.vue'
-import AuthorName from './graph/label/author/AuthorName.vue'
-import UserProfile from './header/profile/UserProfile.vue'
-import UserPhoto from './header/profile/photo/UserPhoto.vue'
+import CategoryLabel from './graph/label/category/CategoryLabel.vue';
+import ArticleName from './graph/label/name/ArticleName.vue';
+import AuthorName from './graph/label/author/AuthorName.vue';
+import UserProfile from './header/profile/UserProfile.vue';
+import UserPhoto from './header/profile/photo/UserPhoto.vue';
 
 export {
     GraphContainer,

@@ -2,7 +2,7 @@
 import { DesktopHeader, MobileHeader } from '@/components';
 import { useScreen } from '@/composables';
 
-const { isMobile } = useScreen()
+const { isMobile } = useScreen();
 </script>
 <template>
     <header>
