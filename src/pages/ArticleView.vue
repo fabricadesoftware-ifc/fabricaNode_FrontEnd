@@ -3,9 +3,11 @@ import Magnify from 'vue-material-design-icons/Magnify.vue'
 import BookmarkOutline from 'vue-material-design-icons/BookmarkOutline.vue'
 import ChevronDown from 'vue-material-design-icons/ChevronDown.vue'
 import { usePublicationStore } from '@/stores'
+import { ref } from 'vue'
 
 const publications = usePublicationStore()
 console.log(publications.entirePublications)
+const open = ref(false)
 </script>
 <template>
   <section class="article-pages">
@@ -55,10 +57,13 @@ console.log(publications.entirePublications)
     <section class="container-filter">
       <h3>Filtros</h3>
       <div class="content-filters">
-        <div>
+        <div class="filter" @click="open = !open">
           <div>Categoria</div>
-          <div>
-            <ChevronDown />
+          <div v-if="open">
+            <ChevronDown class="filter-icon-open" @click="open = !open"/>
+          </div>
+          <div v-else>
+            <ChevronDown class="filter-icon-close"/>
           </div>
         </div>
       </div>
@@ -177,5 +182,26 @@ h3 {
   width: 100%;
   border-top: 1px solid #c1c1c1;
   border-left: 1px solid #c1c1c1;
+}
+
+.filter{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 16px;
+  padding: 16px 25px;
+  border-bottom: 1px solid #c1c1c1;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filter-icon-open{
+  display: flex;
+  transform: rotate(180deg);
+}
+
+.filter-icon-close{
+  display: flex;
 }
 </style>
