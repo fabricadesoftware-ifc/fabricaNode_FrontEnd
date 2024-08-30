@@ -31,34 +31,80 @@ const publications = {
   resume: 'Este artigo explora o uso de algoritmos genéticos na otimização de funções complexas.',
   type: '1',
   favorite: false,
-  date: '02-02-22'
+  date: '02-02-22',
+  likes: 3
 }
 
-const publication = { category: 'livro' }
-const filtredCategories = ['livro', 'artigo']
+const publicationss = [
+  {
+      id: 1,
+      label: "Análise de Algoritmos Genéticos",
+      link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+      authors: ["1"],
+      keywords: ["1", "2", "3"],
+      categories: ["9", "10"],
+      resume: "Este artigo explora o uso de algoritmos genéticos na otimização de funções complexas.",
+      type: "1",
+      favorite: false,
+      date: "03-02-21"
+  },
+  {
+      id: 2,
+      label: "Introdução à Inteligência Artificial",
+      link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+      authors: ["2"],
+      keywords: ["4", "5", "6"],
+      categories: ["9"],
+      resume: "Uma visão geral sobre os conceitos básicos e aplicações da inteligência artificial.",
+      type: "2",
+      favorite: false,
+      date: "01-02-21"
+  },
+  {
+      id: 3,
+      label: "Aprendizado de Máquina Aplicado à Medicina",
+      link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+      authors: ["13", "14"],
+      keywords: ["5", "7", "8"],
+      categories: ["5"],
+      resume: "O artigo discute como técnicas de machine learning podem ser usadas para melhorar diagnósticos médicos.",
+      type: "3",
+      favorite: false,
+      date: "03-02-21"
+  },
+  {
+      id: 4,
+      label: "Redes Neurais e sua Aplicação em Previsão de Mercado",
+      link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+      authors: ["15", "16"],
+      keywords: ["6", "9", "10"],
+      categories: ["12"],
+      resume: "Explora o uso de redes neurais para previsões financeiras e de mercado.",
+      type: "4",
+      favorite: false,
+      date: "03-02-21"
+  }]
+const filtredCategories = ['14', '9']
 
-function filterByCategories(publicacao, filtredCategories) {
+function filterByCategories(publicacao: any, filtredCategories: any) {
   const newFiltredCategories = new Set(filtredCategories)
-  if (publicacao.categories.some((element) => newFiltredCategories.has(element))) {
-    console.log(publicacao)
-  }
-  return publicacao
+  const arrayFiltrada = publicacao.filter((publication: any) => (publication.categories.some((element: any) => newFiltredCategories.has(element)) ))
+    console.log(arrayFiltrada)
 }
-function filterByDate(publication, minDate, maxDate) {
-  if (publication.date >= minDate && publication.date <= maxDate) {
-    console.log(publication)
-    return publication
-  }
+function filterByDate(publicacao: any, minDate: any, maxDate: any) {
+    const arrayFiltrada = publicacao.filter((publication: any) => (publication.date >= minDate && publicacao.date <= maxDate))
+    console.log(arrayFiltrada)
+    console.log('oi')
 }
-function filterByType(publicacao, filtredType) {
+function filterByType(publicacao: any, filtredType: any) {
   if (filtredType == publicacao.type) {
     console.log(publicacao)
     return publication
   }
 }
-function filterByAuthors(publicacao, filtredAuthors) {
+function filterByAuthors(publicacao: any, filtredAuthors: any) {
   const newFiltredAuthors = new Set(filtredAuthors)
-  if (publicacao.authors.some((element) => newFiltredAuthors.has(element))) {
+  if (publicacao.authors.some((element: any) => newFiltredAuthors.has(element))) {
     console.log(publicacao)
   }
 }
@@ -84,17 +130,17 @@ function sortByZa() {
   console.log(publicacao)
 }
 function sortByCurtidas() {
-  publicacao.sort((a, b) => a.curtidas.localeCompare(b.curtidas))
+  publicacao.sort((a, b) => a.likes.localeCompare(b.likes))
   console.log(publicacao)
 }
-function sortByFavorites(publicacao) {
+function sortByFavorites(publicacao: any) {
   if(seusFavoritos.includes(publicacao.name)){
     console.log(publicacao)
 }
 }
 
-filterByCategories(publications, filtredCategories)
-filterByDate(publications, '02-02-21', '02-02-24')
+filterByCategories(publicationss, filtredCategories)
+filterByDate(publicationss, '02-02-21', '02-02-24')
 filterByType(publications, '1')
 filterByAuthors(publications, '1')
 sortByRecentDate()
