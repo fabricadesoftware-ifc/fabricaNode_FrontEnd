@@ -2,10 +2,13 @@
 import Magnify from 'vue-material-design-icons/Magnify.vue'
 import BookmarkOutline from 'vue-material-design-icons/BookmarkOutline.vue'
 import ChevronDown from 'vue-material-design-icons/ChevronDown.vue'
+import { CategoryService } from '@/services'
 import { usePublicationStore } from '@/stores'
 import { ref } from 'vue'
 
 const publications = usePublicationStore()
+const categories = new CategoryService()
+console.log(categories)
 console.log(publications.entirePublications)
 const open = ref(false)
 </script>
@@ -57,13 +60,23 @@ const open = ref(false)
     <section class="container-filter">
       <h3>Filtros</h3>
       <div class="content-filters">
-        <div class="filter" @click="open = !open">
-          <div>Categoria</div>
-          <div v-if="open">
-            <ChevronDown class="filter-icon-open" @click="open = !open"/>
+        <div class="filter" >
+        
+          <div class="filter-name">
+            <div>Categoria</div>
+            <div v-if="open">
+              <ChevronDown class="filter-icon-open" @click="open = !open"/>
+            </div>
+            <div v-else>
+              <ChevronDown class="filter-icon-close" @click="open = !open"/>
+            </div>
           </div>
-          <div v-else>
-            <ChevronDown class="filter-icon-close"/>
+          <div class="filter-options" v-if="open">
+            <div v-for="(category, index) in categories.getCategory()" :key="index">
+              <input :id="index" type="checkbox" > 
+              <label :for="index"> {{category.name}}</label>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -74,10 +87,61 @@ const open = ref(false)
 * {
   font-family: 'Montserrat', sans-serif;
 }
+
 .article-pages {
   height: auto;
   margin-top: 22vh;
   display: flex;
+}
+
+.filter-name{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-options{
+  overflow-y:scroll;
+  height: 200px;
+  margin-top: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #848484;
+}
+::-webkit-scrollbar-thumb {
+    background: #2C7A7A;
+    border-radius: 10px;
+}
+
+.filter-options div{
+  display: flex;
+  margin: 18px 0;
+  font-weight: 450;
+}
+
+.filter-options label{
+  margin-left: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-options input{
+  color: #848484;
+  border: 1px solid #848484;
+  appearance: none;
+  height: 17px;
+  width: 17px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-options input:checked{
+  background-color: #2C7A7A;
 }
 
 .container-articles {
@@ -184,11 +248,12 @@ h3 {
   border-left: 1px solid #c1c1c1;
 }
 
-.filter{
+.filter {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   width: 100%;
-  justify-content: space-between;
+  flex-direction: column;
+  /* justify-content: space-between; */
   font-size: 16px;
   padding: 16px 25px;
   border-bottom: 1px solid #c1c1c1;
@@ -196,12 +261,12 @@ h3 {
   cursor: pointer;
 }
 
-.filter-icon-open{
+.filter-icon-open {
   display: flex;
   transform: rotate(180deg);
 }
 
-.filter-icon-close{
+.filter-icon-close {
   display: flex;
 }
 </style>
