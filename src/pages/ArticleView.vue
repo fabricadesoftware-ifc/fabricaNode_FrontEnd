@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import Magnify from 'vue-material-design-icons/Magnify.vue'
 import BookmarkOutline from 'vue-material-design-icons/BookmarkOutline.vue'
+import Bookmark from 'vue-material-design-icons/Bookmark.vue'
 import ChevronDown from 'vue-material-design-icons/ChevronDown.vue'
 import { CategoryService } from '@/services'
 import { usePublicationStore } from '@/stores'
@@ -8,10 +9,14 @@ import { ref } from 'vue'
 
 const publications = usePublicationStore()
 const categorySelect = ref([])
+const share = ref(false)
+const favorite = ref(false)
 const categories = new CategoryService()
-console.log(categorySelect.value)
-console.log(categories.getCategory())
+console.log(categories.getCategory()[6].id)
 console.log(publications.entirePublications)
+
+
+
 const open = ref(false)
 </script>
 <template>
@@ -20,7 +25,13 @@ const open = ref(false)
       <section class="container-title">
         <div>
           <h1>Publicações</h1>
-          <Magnify size="30" />
+          <Magnify size="30" @click="share =! share" class="share-icon"/>
+
+          <Transition name="input-share-animation">
+          <div v-if="share" class="input-share">
+            <input type="text" name="" id="" placeholder="Pesquise aqui">
+          </div>
+          </Transition>
         </div>
         <div class="total-article">Total De Publicações: 400</div>
       </section>
@@ -50,11 +61,16 @@ const open = ref(false)
           </div>
         </div>
         <div class="utility-article">
-          <div class="favorite-article">
-            <BookmarkOutline size="20" />
-            <span> Favoritar</span>
+          <div class="favorite-article" @click="favorite =! favorite">
+            <div v-if="favorite" >
+              <Bookmark size="20"/>
+            </div>
+            <div v-else>
+              <BookmarkOutline size="20" />
+            </div>
+            <span > Favoritar</span>
           </div>
-          <div>Artigos Relacionados</div>
+          <div><a href="">Artigos Relacionados</a></div>
         </div>
         <hr />
       </section>
@@ -85,6 +101,98 @@ const open = ref(false)
             </div>
           </div>
         </div>
+        <div class="filter">
+          <div class="filter-name" @click="open = !open">
+            <div>Categoria</div>
+            <div v-if="open" >
+              <ChevronDown class="filter-icon-open"/>
+            </div>
+            <div v-else>
+              <ChevronDown class="filter-icon-close"  />
+            </div>
+          </div>
+          <div class="filter-options" v-if="open">
+            <div v-for="(category, index) in categories.getCategory()" :key="index">
+              <input
+                type="checkbox"
+                :id="index"
+                :name="category.name"
+               v-model="categorySelect"
+                :value="category.id"
+              />
+              <label :for="index"> {{ category.name }}</label>
+            </div>
+          </div>
+        </div>
+        <div class="filter">
+          <div class="filter-name" @click="open = !open">
+            <div>Categoria</div>
+            <div v-if="open" >
+              <ChevronDown class="filter-icon-open"/>
+            </div>
+            <div v-else>
+              <ChevronDown class="filter-icon-close"  />
+            </div>
+          </div>
+          <div class="filter-options" v-if="open">
+            <div v-for="(category, index) in categories.getCategory()" :key="index">
+              <input
+                type="checkbox"
+                :id="index"
+                :name="category.name"
+               v-model="categorySelect"
+                :value="category.id"
+              />
+              <label :for="index"> {{ category.name }}</label>
+            </div>
+          </div>
+        </div>
+        <div class="filter">
+          <div class="filter-name" @click="open = !open">
+            <div>Categoria</div>
+            <div v-if="open" >
+              <ChevronDown class="filter-icon-open"/>
+            </div>
+            <div v-else>
+              <ChevronDown class="filter-icon-close"  />
+            </div>
+          </div>
+          <div class="filter-options" v-if="open">
+            <div v-for="(category, index) in categories.getCategory()" :key="index">
+              <input
+                type="checkbox"
+                :id="index"
+                :name="category.name"
+               v-model="categorySelect"
+                :value="category.id"
+              />
+              <label :for="index"> {{ category.name }}</label>
+            </div>
+          </div>
+        </div>
+        <div class="filter">
+          <div class="filter-name" @click="open = !open">
+            <div>Categoria</div>
+            <div v-if="open" >
+              <ChevronDown class="filter-icon-open"/>
+            </div>
+            <div v-else>
+              <ChevronDown class="filter-icon-close"  />
+            </div>
+          </div>
+          <div class="filter-options" v-if="open">
+            <div v-for="(category, index) in categories.getCategory()" :key="index">
+              <input
+                type="checkbox"
+                :id="index"
+                :name="category.name"
+               v-model="categorySelect"
+                :value="category.id"
+              />
+              <label :for="index"> {{ category.name }}</label>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </section>
@@ -92,6 +200,52 @@ const open = ref(false)
 <style scoped>
 * {
   font-family: 'Montserrat', sans-serif;
+}
+
+.share-icon{
+  cursor: pointer;
+}
+
+.input-share{
+  width: 100%;
+}
+
+.input-share input{
+  border-bottom: 1px solid black;
+  outline: none;
+  font-size: 20px;
+  width: 70%;
+}
+
+.input-share-animation-enter-active {
+  animation: input 1s;
+}
+
+.input-share-animation-leave-to {
+  animation: input-disappear 1s;
+}
+
+@keyframes input{
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+@keyframes input-disappear{
+  0%{
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+
+.input-share input::placeholder{
+ color: #464343;
 }
 
 .article-pages {
@@ -155,12 +309,14 @@ const open = ref(false)
   padding: 0px 100px;
 }
 
+
 .container-filter {
   width: 20vw;
   height: 100vh;
   /* background-color: #a7a7a7; */
   position: sticky;
   top: 150px;
+
 }
 
 .container-title div {
@@ -197,6 +353,21 @@ h1 {
   margin: 14px 0 14px 0;
 }
 
+.container-article{
+  cursor: pointer;
+}
+
+.container-article:hover  .category-line{
+  width: 100px;
+  transition: 0.5s;
+}
+
+.container-article:hover{
+  transform: scale(1.01);
+  transition: 0.2s;
+}
+
+
 .info-article {
   color: #464343;
   font-weight: 400;
@@ -210,6 +381,7 @@ h1 {
 
 .favorite-article {
   display: flex;
+  cursor: pointer;
 }
 
 hr {
@@ -230,6 +402,10 @@ h1 a {
 
 a {
   color: #464343;
+}
+
+.utility-article a{
+  color: black;
 }
 
 a:hover {
@@ -265,6 +441,7 @@ h3 {
   border-bottom: 1px solid #c1c1c1;
   font-weight: 500;
   cursor: pointer;
+
 }
 
 .filter-icon-open {
