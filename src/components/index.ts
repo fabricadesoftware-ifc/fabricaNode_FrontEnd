@@ -24,6 +24,16 @@ import ArticleName from './graph/label/name/ArticleName.vue';
 import AuthorName from './graph/label/author/AuthorName.vue';
 import UserProfile from './header/profile/UserProfile.vue';
 import UserPhoto from './header/profile/photo/UserPhoto.vue';
+import InfoPublication from './publications/card/info/InfoPublication.vue'
+import UtilityPublication from './publications/card/utility/UtilityPublication.vue'
+import CardPublication from './publications/card/CardPublication.vue'
+import FilterName from './publications/filter/name/FilterName.vue'
+import FilterOptions from './publications/filter/options/FilterOptions.vue'
+import FilterPage from  './publications/filter/FilterPage.vue'
+import SearchPage from './publications/title/search/SearchPage.vue'
+import TitlePage from './publications/title/TitlePage.vue'
+import DefaultPublications from './publications/DefaultPublications.vue'
+
 
 export {
     GraphContainer,
@@ -51,5 +61,14 @@ export {
     FastLinks,
     FooterTitles,
     UserProfile,
-    UserPhoto
+    UserPhoto,
+    InfoPublication,
+    UtilityPublication,
+    CardPublication,
+    FilterName,
+    FilterOptions,
+    FilterPage,
+    SearchPage,
+    TitlePage,
+    DefaultPublications,
 };

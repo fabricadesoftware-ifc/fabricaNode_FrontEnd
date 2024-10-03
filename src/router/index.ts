@@ -25,7 +25,7 @@ const router = createRouter({
         {
           path: '/author',
           name: 'author',
-          component: () => import('../pages/DevView.vue'),
+          component: () => import('../pages/AuthorView.vue'),
         },
         {
           path: '/favorite',
