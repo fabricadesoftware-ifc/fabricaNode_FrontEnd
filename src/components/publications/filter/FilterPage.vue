@@ -1,62 +1,26 @@
 <script lang="ts" setup>
 import { FilterName, FilterOptions } from '@/components'
-import { CategoryService, TypeService, AuthorService } from '@/services'
+import { useTemplateStore } from '@/stores';
 import { ref } from 'vue'
-const categories = new CategoryService()
-const types = new TypeService()
-const authors = new AuthorService()
 const optionsSelect = ref([])
-const openFilters = ref(new Set())
+const templateStore = useTemplateStore()
 
 function updateOption(option) {
   optionsSelect.value = option
 }
 
-const openMenu = (index) => {
-  if (openFilters.value.has(index)) {
-    openFilters.value.delete(index)
-  } else {
-    openFilters.value.add(index)
-  }
-}
-
-const isOpen = (index) => {
-  return openFilters.value.has(index)
-}
-const filters = [
-  {
-    name: 'Categoria',
-    options: categories.getCategory()
-  },
-  {
-    name: 'Tipo de publicação',
-    options: types.getTypes()
-  },
-  {
-    name: 'Período',
-    options: ['hi']
-  },
-  {
-    name: 'Autores',
-    options: authors.getAuthos()
-  },
-  {
-    name: 'ordenar',
-    options: []
-  }
-]
 </script>
 
 <template>
   <h3>Filtros</h3>
   <div class="content-filters">
-    <div class="filter" v-for="(filter, index) in filters" :key="index">
-      <FilterName :titulo="filter.name" :open="isOpen(index)" @OpenMenu="openMenu(index)" />
+    <div class="filter" v-for="(filter, index) in templateStore.filters" :key="index">
+      <FilterName :titulo="filter.name" :open="templateStore.isOpen(index)" @OpenMenu="templateStore.openMenu(index)" />
       <FilterOptions
         :options="filter.options"
         :selects="optionsSelect"
         @updateOption="updateOption"
-        v-if="isOpen(index)"
+        v-if="templateStore.isOpen(index)"
       />
     </div>
   </div>
