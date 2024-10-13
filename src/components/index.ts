@@ -33,6 +33,8 @@ import FilterPage from  './publications/filter/FilterPage.vue'
 import SearchPage from './publications/title/search/SearchPage.vue'
 import TitlePage from './publications/title/TitlePage.vue'
 import DefaultPublications from './publications/DefaultPublications.vue'
+import DesktopPublications from '@/components/publications/DesktopPublications.vue'
+import MobilePublications from '@/components/publications/MobilePublications.vue'
 
 
 export {
@@ -71,4 +73,6 @@ export {
     SearchPage,
     TitlePage,
     DefaultPublications,
+    DesktopPublications,
+    MobilePublications
 };

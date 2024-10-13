@@ -1,16 +1,20 @@
 <script lang="ts" setup>
-import { Magnify } from '@/components/icons';
 import { ref } from 'vue';
-const search = ref(false)
+
+import { Magnify } from '@/components/icons';
+
+const search = ref(false);
 </script>
 <template>
-  <Magnify size="30" @click="search = !search" class="search-icon" />
+  <div>
+    <Magnify size="30" @click="search = !search" class="search-icon" />
 
-  <Transition name="input-search-animation">
-    <div v-if="search" class="input-search">
-      <input type="text" name="" id="" placeholder="Pesquise aqui" />
-    </div>
-  </Transition>
+    <Transition name="input-search-animation">
+      <div v-if="search" class="input-search">
+        <input type="text" name="" id="" placeholder="Pesquise aqui" />
+      </div>
+    </Transition>
+  </div>
 </template>
 
 <style scoped>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { Bookmark, BookmarkOutline } from '@/components/icons'
+import { Bookmark, BookmarkOutline } from '@/components/icons';
 
-defineProps(['publication'])
+defineProps(['publication']);
 </script>
 
 <template>

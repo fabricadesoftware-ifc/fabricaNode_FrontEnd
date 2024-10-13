@@ -8,23 +8,25 @@ defineProps({
     type: Array,
     required: true
   }
-})
+});
 </script>
 
 <template>
-  <div class="info-article">
-    Autores:
-    <div v-for="(author, index) in authors" :key="index" class="text-inline">
-      <a href=""
-        >{{ author.name }}<span v-if="index < authors.length - 2">, </span>
-        <span v-else-if="index === authors.length - 2"> e </span></a
-      >
+  <div>
+    <div class="info-article">
+      Autores:
+      <div v-for="(author, index) in authors" :key="index" class="text-inline">
+        <a href=""
+          >{{ author.name }}<span v-if="index < authors.length - 2">, </span>
+          <span v-else-if="index === authors.length - 2"> e </span></a
+        >
+      </div>
     </div>
-  </div>
-  <div class="info-article">
-    Palavras-chave:
-    <div v-for="(keyword, index) in keywords" :key="index" class="text-inline text-underline">
-      <a href="">{{ keyword.key }} <span v-if="index < keywords.length - 1">, </span></a>
+    <div class="info-article">
+      Palavras-chave:
+      <div v-for="(keyword, index) in keywords" :key="index" class="text-inline text-underline">
+        <a href="">{{ keyword.key }} <span v-if="index < keywords.length - 1">, </span></a>
+      </div>
     </div>
   </div>
 </template>

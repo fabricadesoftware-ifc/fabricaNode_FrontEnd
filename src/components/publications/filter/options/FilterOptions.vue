@@ -8,9 +8,11 @@ const props = defineProps({
     type: Array,
     required: true
   }
-})
-const optionSelect = props.selects
+});
+
+const optionSelect = props.selects;
 </script>
+
 <template>
   <div class="filter-options">
     <div v-for="(option, index) in props.options" :key="index">

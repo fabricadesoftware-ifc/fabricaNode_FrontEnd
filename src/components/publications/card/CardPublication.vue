@@ -1,27 +1,32 @@
 <script lang="ts" setup>
-import { InfoPublication, UtilityPublication } from '@/components'
-import { usePublicationStore } from '@/stores'
+import { InfoPublication, UtilityPublication } from '@/components';
+import { usePublicationStore } from '@/stores';
 
-const publications = usePublicationStore()
-function favorite(publication) {
-  publication.favorite = !publication.favorite
+const publications = usePublicationStore();
+
+function favorite(publication: any) {
+  publication.favorite = !publication.favorite;
 }
 </script>
+
 <template>
-  <section
-    class="container-article"
-    v-for="(publication, index) in publications.entirePublications"
-    :key="index"
-  >
-    <div class="category-line"></div>
-    <h1>
-      <a href="">{{ publication.label }}</a>
-    </h1>
-    <InfoPublication :authors="publication.authors" :keywords="publication.keywords" />
-    <UtilityPublication :publication="publication" @favorite="favorite" />
-    <hr />
-  </section>
+  <div>
+    <section
+      class="container-article"
+      v-for="(publication, index) in publications.entirePublications"
+      :key="index"
+    >
+      <div class="category-line"></div>
+      <h1>
+        <a href="">{{ publication.label }}</a>
+      </h1>
+      <InfoPublication :authors="publication.authors" :keywords="publication.keywords" />
+      <UtilityPublication :publication="publication" @favorite="favorite" />
+      <hr />
+    </section>
+  </div>
 </template>
+
 <style scoped>
 .container-article h1 {
   font-size: 16px;

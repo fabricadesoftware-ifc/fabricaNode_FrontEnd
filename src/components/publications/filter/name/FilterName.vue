@@ -1,7 +1,9 @@
 <script lang="ts" setup>
-import { ChevronDown } from '@/components/icons'
-defineProps(['titulo', 'open'])
+import { ChevronDown } from '@/components/icons';
+
+defineProps(['titulo', 'open']);
 </script>
+
 <template>
   <div class="filter-name" @click="$emit('OpenMenu')">
     <div>{{ titulo }}</div>
@@ -13,6 +15,7 @@ defineProps(['titulo', 'open'])
     </div>
   </div>
 </template>
+
 <style scoped>
 .filter-icon-open {
   display: flex;

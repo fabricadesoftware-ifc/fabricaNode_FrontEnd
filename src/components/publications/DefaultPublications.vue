@@ -1,33 +1,12 @@
 <script lang="ts" setup>
-import { CardPublication, TitlePage, FilterPage } from '@/components'
+import { MobilePublications, DesktopPublications } from '@/components';
+import { useScreen } from '@/composables';
+
+const { isMobile } = useScreen();
 </script>
 <template>
-  <section class="article-pages">
-    <section class="container-articles">
-      <TitlePage title="Publicações" />
-      <CardPublication />
-    </section>
-    <section class="container-filter">
-      <FilterPage />
-    </section>
-  </section>
+    <header>
+        <DesktopPublications v-if="!isMobile" />
+        <MobilePublications v-else />
+    </header>
 </template>
-<style scoped>
-.article-pages {
-  height: auto;
-  margin-top: 22vh;
-  display: flex;
-}
-
-.container-articles {
-  width: 80vw;
-  padding: 0px 100px;
-}
-
-.container-filter {
-  width: 20vw;
-  height: 800px;
-  position: sticky;
-  top: 150px;
-}
-</style>

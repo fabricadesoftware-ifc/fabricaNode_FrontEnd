@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { SearchPage } from '@/components'
-defineProps(["title"])
+import { SearchPage } from '@/components';
+
+defineProps(["title"]);
 </script>
 
 <template>

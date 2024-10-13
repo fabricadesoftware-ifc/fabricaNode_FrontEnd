@@ -1,29 +1,32 @@
 <script lang="ts" setup>
+import { ref } from 'vue';
+
 import { FilterName, FilterOptions } from '@/components'
 import { useTemplateStore } from '@/stores';
-import { ref } from 'vue'
-const optionsSelect = ref([])
-const templateStore = useTemplateStore()
 
-function updateOption(option) {
-  optionsSelect.value = option
-}
+const optionsSelect = ref([]);
+const templateStore = useTemplateStore();
 
+function updateOption(option: any) {
+  optionsSelect.value = option;
+};
 </script>
 
 <template>
-  <h3>Filtros</h3>
-  <div class="content-filters">
-    <div class="filter" v-for="(filter, index) in templateStore.filters" :key="index">
-      <FilterName :titulo="filter.name" :open="templateStore.isOpen(index)" @OpenMenu="templateStore.openMenu(index)" />
-      <FilterOptions
-        :options="filter.options"
-        :selects="optionsSelect"
-        @updateOption="updateOption"
-        v-if="templateStore.isOpen(index)"
-      />
+  <section>
+    <h3>Filtros</h3>
+    <div class="content-filters">
+      <div class="filter" v-for="(filter, index) in templateStore.filters" :key="index">
+        <FilterName :titulo="filter.name" :open="templateStore.isOpen(index)" @OpenMenu="templateStore.openMenu(index)" />
+        <FilterOptions
+          :options="filter.options"
+          :selects="optionsSelect"
+          @updateOption="updateOption"
+          v-if="templateStore.isOpen(index)"
+        />
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
@@ -45,7 +48,7 @@ h3 {
 }
 
 .content-filters {
-  height: calc(100% - 50px);
+  height: 750px;
   width: 100%;
   border-top: 1px solid #c1c1c1;
   border-left: 1px solid #c1c1c1;
