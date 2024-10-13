@@ -1,10 +1,15 @@
-import { ref, reactive } from 'vue';
-import { defineStore } from 'pinia';
+import { ref, reactive } from 'vue'
+import { defineStore } from 'pinia'
+import { CategoryService, TypeService, AuthorService } from '@/services'
 
 export const useTemplateStore = defineStore('template', () => {
   const tooltipOpacity = ref(0)
   const menuActive = ref(false)
-  const navbar = reactive({nav:true})
+  const navbar = reactive({ nav: true })
+  const openFilters = ref(new Set())
+  const categories = new CategoryService()
+  const types = new TypeService()
+  const authors = new AuthorService()
 
   const titles = [
     {
@@ -73,6 +78,41 @@ export const useTemplateStore = defineStore('template', () => {
     }
   ]
 
+  const openMenu = (index) => {
+    if (openFilters.value.has(index)) {
+      openFilters.value.delete(index)
+    } else {
+      openFilters.value.add(index)
+    }
+  }
+
+  const isOpen = (index) => {
+    return openFilters.value.has(index)
+  }
+
+  const filters = [
+    {
+      name: 'Categoria',
+      options: categories.getCategory()
+    },
+    {
+      name: 'Tipo de publicação',
+      options: types.getTypes()
+    },
+    {
+      name: 'Período',
+      options: ['hi']
+    },
+    {
+      name: 'Autores',
+      options: authors.getAuthos()
+    },
+    {
+      name: 'ordenar',
+      options: []
+    }
+  ]
+
   return {
     tooltipOpacity,
     titles,
@@ -81,6 +121,9 @@ export const useTemplateStore = defineStore('template', () => {
     footerTitles,
     footerContact,
     footerMidia,
-    navbar
+    navbar,
+    openMenu, 
+    isOpen,
+    filters
   }
-});
+})

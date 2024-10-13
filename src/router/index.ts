@@ -20,12 +20,12 @@ const router = createRouter({
         {
           path: '/article',
           name: 'article',
-          component: () => import('../pages/DevView.vue'),
+          component: () => import('../pages/ArticleView.vue'),
         },
         {
           path: '/author',
           name: 'author',
-          component: () => import('../pages/DevView.vue'),
+          component: () => import('../pages/AuthorView.vue'),
         },
         {
           path: '/favorite',
