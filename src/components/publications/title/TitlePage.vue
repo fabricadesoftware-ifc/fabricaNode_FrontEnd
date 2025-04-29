@@ -19,6 +19,7 @@ defineProps(["title"]);
   display: flex;
   gap: 10px;
   align-items: center;
+  width: 100%;
 }
 
 .container-title {
