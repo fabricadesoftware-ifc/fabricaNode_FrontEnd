@@ -105,7 +105,26 @@ export const useTemplateStore = defineStore('template', () => {
     },
     {
       name: 'Autores',
-      options: authors.getAuthos()
+      options: authors.getAuthors()
+    },
+    {
+      name: 'ordenar',
+      options: []
+    }
+  ]
+
+  const filterAuthor = [
+    {
+      name: 'Categoria',
+      options: categories.getCategory()
+    },
+    {
+      name: 'Grau de Formação',
+      options: []
+    },
+    {
+      name: 'Estado',
+      options: []
     },
     {
       name: 'ordenar',
@@ -124,6 +143,7 @@ export const useTemplateStore = defineStore('template', () => {
     navbar,
     openMenu, 
     isOpen,
-    filters
+    filters,
+    filterAuthor
   }
 })

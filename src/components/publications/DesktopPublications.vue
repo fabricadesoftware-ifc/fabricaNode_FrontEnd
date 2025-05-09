@@ -1,5 +1,10 @@
 <script lang="ts" setup>
 import { CardPublication, TitlePage, FilterPage } from '@/components';
+import { useTemplateStore } from '@/stores';
+
+const templateStore = useTemplateStore();
+
+
 </script>
 
 <template>
@@ -9,7 +14,7 @@ import { CardPublication, TitlePage, FilterPage } from '@/components';
       <CardPublication />
     </section>
     <section class="container-filter">
-      <FilterPage />
+      <FilterPage :filter-array="templateStore.filters" />
     </section>
   </section>
 </template>

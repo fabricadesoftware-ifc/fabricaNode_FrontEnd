@@ -21,7 +21,10 @@ function favorite(publication: any) {
         <a href="">{{ publication.label }}</a>
       </h1>
       <InfoPublication :authors="publication.authors" :keywords="publication.keywords" />
-      <UtilityPublication :publication="publication" @favorite="favorite" />
+      <div class="utility-article">
+      <UtilityPublication :data="publication" @favorite="favorite" />
+      <div><a href="">Artigos Relacionados</a></div>
+      </div>
       <hr />
     </section>
   </div>
@@ -32,6 +35,21 @@ function favorite(publication: any) {
   font-size: 16px;
   margin: 14px 0 14px 0;
 }
+
+.utility-article {
+  display: flex;
+  gap: 27px;
+}
+
+.utility-article a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+  transition: 3s;
+}
+
 h1 {
   font-size: 36px;
   font-weight: 600;

@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { Bookmark, BookmarkOutline } from '@/components/icons';
 
-defineProps(['publication']);
+defineProps(['data']);
 </script>
 
 <template>
-  <div class="utility-article">
-    <div class="favorite-article" @click="$emit('favorite', publication)">
-      <div v-if="publication.favorite">
+
+    <div class="favorite-article" @click="$emit('favorite', data)">
+      <div v-if="data.favorite">
         <Bookmark size="20" />
       </div>
       <div v-else>
@@ -15,8 +15,8 @@ defineProps(['publication']);
       </div>
       <span> Favoritar</span>
     </div>
-    <div><a href="">Artigos Relacionados</a></div>
-  </div>
+
+
 </template>
 
 <style scoped>
@@ -34,8 +34,4 @@ defineProps(['publication']);
   cursor: pointer;
 }
 
-a:hover {
-  text-decoration: underline;
-  transition: 3s;
-}
 </style>
