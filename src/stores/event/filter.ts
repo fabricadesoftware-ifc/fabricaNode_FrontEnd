@@ -21,6 +21,135 @@ export const useFilterStore = defineStore('filter', () => {
   //   }
 })
 
+// const publications = {
+//   id: 1,
+//   label: 'Análise de Algoritmos Genéticos',
+//   link: 'http://copec.eu/congresses/intertech2014/proc/works/101.pdf',
+//   authors: ['1'],
+//   keywords: ['1', '2', '3'],
+//   categories: ['livro', 'artigo'],
+//   resume: 'Este artigo explora o uso de algoritmos genéticos na otimização de funções complexas.',
+//   type: '1',
+//   favorite: false,
+//   date: '02-02-22',
+//   likes: 3
+// }
+
+// const publicationss = [
+//   {
+//       id: 1,
+//       label: "Análise de Algoritmos Genéticos",
+//       link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+//       authors: ["1"],
+//       keywords: ["1", "2", "3"],
+//       categories: ["9", "10"],
+//       resume: "Este artigo explora o uso de algoritmos genéticos na otimização de funções complexas.",
+//       type: "1",
+//       favorite: false,
+//       date: "03-02-21"
+//   },
+//   {
+//       id: 2,
+//       label: "Introdução à Inteligência Artificial",
+//       link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+//       authors: ["2"],
+//       keywords: ["4", "5", "6"],
+//       categories: ["9"],
+//       resume: "Uma visão geral sobre os conceitos básicos e aplicações da inteligência artificial.",
+//       type: "2",
+//       favorite: false,
+//       date: "01-02-21"
+//   },
+//   {
+//       id: 3,
+//       label: "Aprendizado de Máquina Aplicado à Medicina",
+//       link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+//       authors: ["13", "14"],
+//       keywords: ["5", "7", "8"],
+//       categories: ["5"],
+//       resume: "O artigo discute como técnicas de machine learning podem ser usadas para melhorar diagnósticos médicos.",
+//       type: "3",
+//       favorite: false,
+//       date: "03-02-21"
+//   },
+//   {
+//       id: 4,
+//       label: "Redes Neurais e sua Aplicação em Previsão de Mercado",
+//       link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+//       authors: ["15", "16"],
+//       keywords: ["6", "9", "10"],
+//       categories: ["12"],
+//       resume: "Explora o uso de redes neurais para previsões financeiras e de mercado.",
+//       type: "4",
+//       favorite: false,
+//       date: "03-02-21"
+//   }]
+// const filtredCategories = ['14', '9']
+
+// function filterByCategories(publicacao: any, filtredCategories: any) {
+//   const newFiltredCategories = new Set(filtredCategories)
+//   const arrayFiltrada = publicacao.filter((publication: any) => (publication.categories.some((element: any) => newFiltredCategories.has(element)) ))
+//     console.log(arrayFiltrada)
+// }
+// function filterByDate(publicacao: any, minDate: any, maxDate: any) {
+//     const arrayFiltrada = publicacao.filter((publication: any) => (publication.date >= minDate && publicacao.date <= maxDate))
+//     console.log(arrayFiltrada)
+//     console.log('oi')
+// }
+// function filterByType(publicacao: any, filtredType: any) {
+//   if (filtredType == publicacao.type) {
+//     console.log(publicacao)
+//     return publication
+//   }
+// }
+// function filterByAuthors(publicacao: any, filtredAuthors: any) {
+//   const newFiltredAuthors = new Set(filtredAuthors)
+//   if (publicacao.authors.some((element: any) => newFiltredAuthors.has(element))) {
+//     console.log(publicacao)
+//   }
+// }
+// const publicacao = [
+//   { nome: 'Livro', data: 3 },
+//   { nome: 'Artigo', data: 2 },
+//   { nome: 'Zcdrd', data: 4 }
+// ]
+// function sortByRecentDate() {
+//   publicacao.sort((a, b) => a.data - b.data)
+//   console.log(publicacao)
+// }
+// function sortByOldenDate() {
+//   publicacao.sort((a, b) => b.data - a.data)
+//   console.log(publicacao)
+// }
+// function sortByAz() {
+//   publicacao.sort((a, b) => a.nome.localeCompare(b.nome))
+//   console.log(publicacao)
+// }
+// function sortByZa() {
+//   publicacao.sort((a, b) => a.nome.localeCompare(b.nome))
+//   console.log(publicacao)
+// }
+// function sortByCurtidas() {
+//   publicacao.sort((a, b) => a.likes.localeCompare(b.likes))
+//   console.log(publicacao)
+// }
+// function sortByFavorites(publicacao: any) {
+//   if(seusFavoritos.includes(publicacao.name)){
+//     console.log(publicacao)
+// }
+// }
+
+// filterByCategories(publicationss, filtredCategories)
+// filterByDate(publicationss, '02-02-21', '02-02-24')
+// filterByType(publications, '1')
+// filterByAuthors(publications, '1')
+// sortByRecentDate()
+// sortByOldenDate() 
+// sortByDate()
+// sortByAz()
+// sortByZa()
+// sortByCurtidas()
+// sortByFavorites(publications)
 const publications = {
   id: 1,
   label: 'Análise de Algoritmos Genéticos',
@@ -31,122 +160,151 @@ const publications = {
   resume: 'Este artigo explora o uso de algoritmos genéticos na otimização de funções complexas.',
   type: '1',
   favorite: false,
-  date: '02-02-22',
+  date: '02-02-2022',
   likes: 3
-}
+};
 
 const publicationss = [
   {
-      id: 1,
-      label: "Análise de Algoritmos Genéticos",
-      link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
-      authors: ["1"],
-      keywords: ["1", "2", "3"],
-      categories: ["9", "10"],
-      resume: "Este artigo explora o uso de algoritmos genéticos na otimização de funções complexas.",
-      type: "1",
-      favorite: false,
-      date: "03-02-21"
+    id: 1,
+    label: "Análise de Algoritmos Genéticos",
+    link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+    authors: ["1"],
+    keywords: ["1", "2", "3"],
+    categories: ["9", "10"],
+    resume: "Este artigo explora o uso de algoritmos genéticos na otimização de funções complexas.",
+    type: "1",
+    favorite: false,
+    date: "03-01-2021",
+    likes: 3
   },
   {
-      id: 2,
-      label: "Introdução à Inteligência Artificial",
-      link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
-      authors: ["2"],
-      keywords: ["4", "5", "6"],
-      categories: ["9"],
-      resume: "Uma visão geral sobre os conceitos básicos e aplicações da inteligência artificial.",
-      type: "2",
-      favorite: false,
-      date: "01-02-21"
+    id: 2,
+    label: "Introdução à Inteligência Artificial",
+    link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+    authors: ["2"],
+    keywords: ["4", "5", "6"],
+    categories: ["9"],
+    resume: "Uma visão geral sobre os conceitos básicos e aplicações da inteligência artificial.",
+    type: "2",
+    favorite: false,
+    date: "04-01-2021",
+    likes: 5
   },
   {
-      id: 3,
-      label: "Aprendizado de Máquina Aplicado à Medicina",
-      link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
-      authors: ["13", "14"],
-      keywords: ["5", "7", "8"],
-      categories: ["5"],
-      resume: "O artigo discute como técnicas de machine learning podem ser usadas para melhorar diagnósticos médicos.",
-      type: "3",
-      favorite: false,
-      date: "03-02-21"
+    id: 3,
+    label: "Aprendizado de Máquina Aplicado à Medicina",
+    link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+    authors: ["13", "14"],
+    keywords: ["5", "7", "8"],
+    categories: ["5"],
+    resume: "O artigo discute como técnicas de machine learning podem ser usadas para melhorar diagnósticos médicos.",
+    type: "3",
+    favorite: false,
+    date: "05-04-2021",
+    likes: 7
   },
   {
-      id: 4,
-      label: "Redes Neurais e sua Aplicação em Previsão de Mercado",
-      link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
-      authors: ["15", "16"],
-      keywords: ["6", "9", "10"],
-      categories: ["12"],
-      resume: "Explora o uso de redes neurais para previsões financeiras e de mercado.",
-      type: "4",
-      favorite: false,
-      date: "03-02-21"
-  }]
-const filtredCategories = ['14', '9']
+    id: 4,
+    label: "Redes Neurais e sua Aplicação em Previsão de Mercado",
+    link: "http://copec.eu/congresses/intertech2014/proc/works/101.pdf",
+    authors: ["15", "16"],
+    keywords: ["6", "9", "10"],
+    categories: ["12"],
+    resume: "Explora o uso de redes neurais para previsões financeiras e de mercado.",
+    type: "4",
+    favorite: false,
+    date: "01-04-2021",
+    likes: 9
+  }
+];
 
-function filterByCategories(publicacao: any, filtredCategories: any) {
-  const newFiltredCategories = new Set(filtredCategories)
-  const arrayFiltrada = publicacao.filter((publication: any) => (publication.categories.some((element: any) => newFiltredCategories.has(element)) ))
-    console.log(arrayFiltrada)
-}
-function filterByDate(publicacao: any, minDate: any, maxDate: any) {
-    const arrayFiltrada = publicacao.filter((publication: any) => (publication.date >= minDate && publicacao.date <= maxDate))
-    console.log(arrayFiltrada)
-    console.log('oi')
-}
-function filterByType(publicacao: any, filtredType: any) {
-  if (filtredType == publicacao.type) {
-    console.log(publicacao)
-    return publication
-  }
-}
-function filterByAuthors(publicacao: any, filtredAuthors: any) {
-  const newFiltredAuthors = new Set(filtredAuthors)
-  if (publicacao.authors.some((element: any) => newFiltredAuthors.has(element))) {
-    console.log(publicacao)
-  }
-}
-const publicacao = [
-  { nome: 'Livro', data: 3 },
-  { nome: 'Artigo', data: 2 },
-  { nome: 'Zcdrd', data: 4 }
-]
-function sortByRecentDate() {
-  publicacao.sort((a, b) => a.data - b.data)
-  console.log(publicacao)
-}
-function sortByOldenDate() {
-  publicacao.sort((a, b) => b.data - a.data)
-  console.log(publicacao)
-}
-function sortByAz() {
-  publicacao.sort((a, b) => a.nome.localeCompare(b.nome))
-  console.log(publicacao)
-}
-function sortByZa() {
-  publicacao.sort((a, b) => a.nome.localeCompare(b.nome))
-  console.log(publicacao)
-}
-function sortByCurtidas() {
-  publicacao.sort((a, b) => a.likes.localeCompare(b.likes))
-  console.log(publicacao)
-}
-function sortByFavorites(publicacao: any) {
-  if(seusFavoritos.includes(publicacao.name)){
-    console.log(publicacao)
-}
+// Filtrar por categoria
+function filterByCategories(publicacoes, filtredCategories) {
+  const newFiltredCategories = new Set(filtredCategories);
+  const arrayFiltrada = publicacoes.filter((publication) =>
+    publication.categories.some((element) => newFiltredCategories.has(element))
+  );
+  console.log(arrayFiltrada);
 }
 
-filterByCategories(publicationss, filtredCategories)
-filterByDate(publicationss, '02-02-21', '02-02-24')
-filterByType(publications, '1')
-filterByAuthors(publications, '1')
-sortByRecentDate()
-sortByOldenDate() 
-sortByDate()
-sortByAz()
-sortByZa()
-sortByCurtidas()
-sortByFavorites(publications)
+// Filtrar por data
+function filterByDate(publicacoes, minDate, maxDate) {
+  const arrayFiltrada = publicacoes.filter(
+    (publication) => publication.date >= minDate && publication.date <= maxDate
+  );
+  console.log(arrayFiltrada);
+}
+
+// Filtrar por tipo
+function filterByType(publicacao, filtredType) {
+  if (filtredType === publicacao.type) {
+    console.log(publicacao);
+    return publicacao;
+  }
+}
+
+// Filtrar por autores
+function filterByAuthors(publicacoes, filtredAuthors) {
+  const newFiltredAuthors = new Set(filtredAuthors);
+  publicacoes.forEach((publicacao) => {
+    if (publicacao.authors.some((element) => newFiltredAuthors.has(element))) {
+      console.log(publicacao);
+    }
+  });
+}
+
+// Ordenar por data mais recente
+function sortByOldenDate(publicacoes) {
+  publicacoes.sort((a, b) => new Date(b.date) - new Date(a.date));
+  console.log(publicacoes);
+}
+
+// Ordenar por data mais antiga
+function sortByRecentDate(publicacoes) {
+  publicacoes.sort((a, b) => new Date(a.date) - new Date(b.date));
+  console.log(publicacoes);
+}
+
+// Ordenar por nome (A-Z)
+function sortByAz(publicacoes) {
+  publicacoes.sort((a, b) => a.label.localeCompare(b.label));
+  console.log(publicacoes);
+}
+
+// Ordenar por nome (Z-A)
+function sortByZa(publicacoes) {
+  publicacoes.sort((a, b) => b.label.localeCompare(a.label));
+  console.log(publicacoes);
+}
+
+// Ordenar por curtidas
+function sortByCurtidas(publicacoes) {
+  publicacoes.sort((a, b) => b.likes - a.likes);
+  console.log(publicacoes);
+}
+
+// Ordenar por favoritos
+function sortByFavorites(publicacoes) {
+  const seusFavoritos = [1, 2, 3]; // exemplo de favoritos
+  publicacoes.forEach((publicacao) => {
+    if (seusFavoritos.includes(publicacao.id)) {
+      console.log(publicacao);
+    }
+  });
+}
+
+// Chamando as funções com o conjunto de publicações
+const filtredCategories = ['9', '10'];
+console.log("filtro por categoria")
+// filterByCategories(publicationss, filtredCategories);
+// filterByDate(publicationss, '01-01-2021', '03-01-2021');
+// filterByType(publications, '1');
+// filterByAuthors(publicationss, ['1']);
+// sortByRecentDate(publicationss);
+// sortByOldenDate(publicationss);
+// sortByAz(publicationss);
+// sortByZa(publicationss);
+// sortByCurtidas(publicationss);
+sortByFavorites(publicationss);
+
