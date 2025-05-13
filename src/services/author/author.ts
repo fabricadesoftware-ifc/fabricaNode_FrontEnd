@@ -2,7 +2,7 @@ import { authors } from "../../../mock"
 import type { IAuthor } from "@/interfaces"
 
 export default class AuthorService {
-    getAuthos(): IAuthor[] {
+    getAuthors(): IAuthor[] {
         return authors
     }
 

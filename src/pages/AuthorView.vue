@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+import { DefaultAuthor } from '@/components';
+</script>
+
 <template>
-    <h1>Autores</h1>
+    <DefaultAuthor/>
 </template>

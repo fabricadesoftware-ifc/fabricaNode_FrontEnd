@@ -3,7 +3,12 @@ import { ref } from 'vue';
 
 import { FilterName, FilterOptions } from '@/components'
 import { useTemplateStore } from '@/stores';
-
+defineProps({
+  filterArray: {
+      type: Array,
+      required: true,
+    },
+});
 const optionsSelect = ref([]);
 const templateStore = useTemplateStore();
 
@@ -16,7 +21,7 @@ function updateOption(option: any) {
   <section>
     <h3>Filtros</h3>
     <div class="content-filters">
-      <div class="filter" v-for="(filter, index) in templateStore.filters" :key="index">
+      <div class="filter" v-for="(filter, index) in filterArray" :key="index">
         <FilterName :titulo="filter.name" :open="templateStore.isOpen(index)" @OpenMenu="templateStore.openMenu(index)" />
         <FilterOptions
           :options="filter.options"

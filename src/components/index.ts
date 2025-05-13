@@ -35,6 +35,8 @@ import TitlePage from './publications/title/TitlePage.vue'
 import DefaultPublications from './publications/DefaultPublications.vue'
 import DesktopPublications from '@/components/publications/DesktopPublications.vue'
 import MobilePublications from '@/components/publications/MobilePublications.vue'
+import DefaultAuthor from '@/components/author/DefaultAuthor.vue'
+import AuthorCard from "./author/card/AuthorCard.vue";
 
 
 export {
@@ -74,5 +76,7 @@ export {
     TitlePage,
     DefaultPublications,
     DesktopPublications,
-    MobilePublications
+    MobilePublications, 
+    DefaultAuthor,
+    AuthorCard
 };
