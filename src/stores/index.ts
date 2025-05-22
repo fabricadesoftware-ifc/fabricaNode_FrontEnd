@@ -6,5 +6,6 @@ import { useEventStore } from "./event/event";
 import { useTemplateStore } from "./template/template";
 import { usePublicationStore } from "./publication/publication";
 import { useAuthorStore } from "./author/author";
+import { useFilterStore } from "./event/filter";
 
-export { useGraphStore, useAuthStore, useTemplateStore, useEdgeStore, useNodeStore, useEventStore, usePublicationStore, useAuthorStore };
+export { useGraphStore, useAuthStore, useTemplateStore, useEdgeStore, useNodeStore, useEventStore, usePublicationStore, useAuthorStore, useFilterStore };
