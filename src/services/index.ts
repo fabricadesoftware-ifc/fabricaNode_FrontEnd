@@ -4,6 +4,7 @@ import CategoryService from "./category/category";
 import PublicationService from "./publication/publication";
 import KeywordService from "./keyword/keyword";
 import TypeService from "./type/type";
+import OrcidService from "./orcid/orcid";
 
 export {
     AuthService,
@@ -11,5 +12,6 @@ export {
     CategoryService,
     PublicationService,
     KeywordService,
-    TypeService
+    TypeService,
+    OrcidService
 }

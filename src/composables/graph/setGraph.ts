@@ -1,27 +1,27 @@
-import { onMounted, reactive, watch } from 'vue';
+import { reactive, watch } from 'vue';
 import { useGraphStore, usePublicationStore } from '@/stores';
 import { generateGraphFromArticles } from '@/utils';
 
 export function useSetGraph() {
-    const { populatePublications, entirePublications } = usePublicationStore();
+    const publicationStore = usePublicationStore();
     const { setGraphData } = useGraphStore();
 
-    populatePublications();
+    // populatePublications já é disparado uma vez no boot do app (main.ts);
+    // chamar de novo aqui corria em paralelo com aquela chamada e duplicava
+    // cada publicação no array (cada uma das duas resetava e empurrava os
+    // mesmos itens). O watch abaixo já reage assim que main.ts terminar.
 
-    const { edges, nodes } = generateGraphFromArticles(entirePublications);
-    const currentConnections = reactive({ nodes, edges });
-
-    onMounted(() => setGraphData(nodes, edges));
+    const currentConnections = reactive({ nodes: {}, edges: {} });
 
     watch(
-        () => entirePublications,
+        () => publicationStore.entirePublications,
         (newValue) => {
-
-            const newPublications = generateGraphFromArticles(newValue);
-            setGraphData(newPublications.nodes, newPublications.edges);
-            currentConnections.nodes = newPublications.nodes;
-            currentConnections.edges = newPublications.edges;
-        }
+            const { nodes, edges } = generateGraphFromArticles(newValue);
+            setGraphData(nodes, edges);
+            currentConnections.nodes = nodes;
+            currentConnections.edges = edges;
+        },
+        { deep: true, immediate: true }
     );
 
     return { currentConnections };

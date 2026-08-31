@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { useAuthStore } from '@/stores';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,7 +39,7 @@ const router = createRouter({
         {
           path: '/profile',
           name: 'profile',
-          component: () => import('../pages/DevView.vue'),
+          component: () => import('../pages/ProfileView.vue'),
           meta: {
             requiresAuth: true
           }
@@ -64,5 +65,17 @@ const router = createRouter({
     }
   ]
 })
+
+router.beforeEach(async (to) => {
+  if (!to.meta.requiresAuth) return true;
+
+  const authStore = useAuthStore();
+  if (!authStore.isAuthenticated && localStorage.getItem('access_token')) {
+    await authStore.loadUser();
+  }
+  if (authStore.isAuthenticated) return true;
+
+  return { name: 'login' };
+});
 
 export default router;

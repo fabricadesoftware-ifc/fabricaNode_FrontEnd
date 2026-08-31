@@ -13,12 +13,21 @@ export const useGraphStore = defineStore('graph', () => {
 
     const graph = ref<vNG.Instance>();
 
+    // Instância do svg-pan-zoom por trás do v-network-graph. Guardada aqui
+    // pra permitir zoom manual mais rápido quando Ctrl está pressionado
+    // (ver GraphContainer.vue), já que a lib não expõe esse controle nos
+    // configs normais.
+    const panZoomInstance = ref<any>(null);
+
     const layoutHandler: vNG.LayoutHandler = new ForceLayout();
 
     const configs = reactive(
         vNG.defineConfigs({
             view: {
                 layoutHandler,
+                onSvgPanZoomInitialized: (instance: any) => {
+                    panZoomInstance.value = instance;
+                },
             },
             node: {
                 label: {
@@ -66,7 +75,7 @@ export const useGraphStore = defineStore('graph', () => {
         Object.assign(edges, newEdges);
     }
 
-    function setGraphData(newNodes: vNG.Node, newEdges: vNG.Edge) {
+    function setGraphData(newNodes: vNG.Nodes, newEdges: vNG.Edges) {
         Object.keys(nodeStore.nodes).forEach(id => delete nodeStore.nodes[id]);
         Object.assign(nodeStore.nodes, newNodes);
 
@@ -75,5 +84,5 @@ export const useGraphStore = defineStore('graph', () => {
     }
 
 
-    return { d3ForceEnabled, buildNetwork, setGraphData, configs, graph };
+    return { d3ForceEnabled, buildNetwork, setGraphData, configs, graph, panZoomInstance };
 });

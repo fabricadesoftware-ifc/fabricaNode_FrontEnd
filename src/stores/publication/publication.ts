@@ -18,7 +18,7 @@ export const usePublicationStore = defineStore('publication', () => {
     async function populatePublications() {
         try {
             entirePublications.value = []
-            publications.value = publicationService.getPublications()
+            publications.value = await publicationService.getPublications()
 
             for (let i = 0; i < publications.value.length; i++) {
                 const currentPublication = publications.value[i];
@@ -52,7 +52,7 @@ export const usePublicationStore = defineStore('publication', () => {
                         throw new Error(`Keyword not found: ${keywordId}`);
                     })
                 )
-                const type: IType | undefined = typeService.getTypeById(Number(currentPublication.type));
+                const type: IType | undefined = typeService.getTypeById(currentPublication.type);
 
                 const fullPublication: IPublication = {
                     ...currentPublication,
@@ -68,10 +68,20 @@ export const usePublicationStore = defineStore('publication', () => {
             console.log(error)
         }
     }
-        return {
+
+    async function favoritar(publicationToToggle: IPublication) {
+        try {
+            publicationToToggle.favorite = await publicationService.favoritar(publicationToToggle.id);
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    return {
         entirePublications,
         publications,
         publication,
-        populatePublications
+        populatePublications,
+        favoritar
     }
 });

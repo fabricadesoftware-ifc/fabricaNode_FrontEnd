@@ -10,18 +10,11 @@ const filterStore = useFilterStore()
 
 
 function favorite(publication: any) {
- publication.favorite = !publication.favorite;
+ publications.favoritar(publication);
 }
-const filtredCategories = [1, 10]; // use números aqui
 
-
-function filtered(publicacoes: any[]) {
- const newFiltredCategories = new Set(filtredCategories);
-  return publicacoes.filter((publication: any) =>
-   publication.categories.some((categoria: any) =>
-     newFiltredCategories.has(categoria.id)
-   )
- );
+function verRelacionados(publication: any) {
+ filterStore.updateOption(publication.categories.map((categoria: any) => categoria.id), 0);
 }
 
 
@@ -41,12 +34,13 @@ function filtered(publicacoes: any[]) {
    >
      <div class="category-line"></div>
      <h1>
-       <a href="">{{ publication.label }}</a>
+       <a v-if="publication.link" :href="publication.link" target="_blank" rel="noopener">{{ publication.label }}</a>
+       <span v-else>{{ publication.label }}</span>
      </h1>
      <InfoPublication :authors="publication.authors" :keywords="publication.keywords" />
      <div class="utility-article">
      <UtilityPublication :data="publication" @favorite="favorite" />
-     <div><a href="">Artigos Relacionados</a></div>
+     <div><a href="#" @click.prevent="verRelacionados(publication)">Artigos Relacionados</a></div>
      </div>
      <hr />
    </section>

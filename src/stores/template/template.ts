@@ -1,4 +1,4 @@
-import { ref, reactive } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { CategoryService, TypeService, AuthorService } from '@/services'
 
@@ -10,6 +10,17 @@ export const useTemplateStore = defineStore('template', () => {
   const categories = new CategoryService()
   const types = new TypeService()
   const authors = new AuthorService()
+
+  const categoryOptions = ref<any[]>([])
+  const typeOptions = ref<any[]>([])
+  const authorOptions = ref<any[]>([])
+
+  async function loadFilterOptions() {
+    categoryOptions.value = await categories.getCategory()
+    typeOptions.value = await types.getTypes()
+    authorOptions.value = await authors.getAuthors()
+  }
+  loadFilterOptions()
 
   const titles = [
     {
@@ -90,33 +101,33 @@ export const useTemplateStore = defineStore('template', () => {
     return openFilters.value.has(index)
   }
 
-  const filters = [
+  const filters = computed(() => [
     {
       name: 'Categoria',
-      options: categories.getCategory()
+      options: categoryOptions.value
     },
     {
       name: 'Tipo de publicação',
-      options: types.getTypes()
+      options: typeOptions.value
     },
     {
       name: 'Período',
-      options: ['hi']
+      options: []
     },
     {
       name: 'Autores',
-      options: authors.getAuthors()
+      options: authorOptions.value
     },
     {
       name: 'ordenar',
       options: []
     }
-  ]
+  ])
 
-  const filterAuthor = [
+  const filterAuthor = computed(() => [
     {
       name: 'Categoria',
-      options: categories.getCategory()
+      options: categoryOptions.value
     },
     {
       name: 'Grau de Formação',
@@ -130,7 +141,7 @@ export const useTemplateStore = defineStore('template', () => {
       name: 'ordenar',
       options: []
     }
-  ]
+  ])
 
   return {
     tooltipOpacity,

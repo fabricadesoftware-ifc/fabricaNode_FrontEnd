@@ -1,15 +1,21 @@
 import axios from 'axios';
 import type { AxiosResponse } from 'axios';
 import type { IApi } from "@/interfaces";
+import { attachAuthInterceptor, attachAnonymousFallback } from './auth';
 
 export class Api implements IApi {
     client = axios.create({
-        baseURL: "http://localhost:8000/api/",
+        baseURL: import.meta.env.VITE_API_BASE_URL,
         headers: {
             "Content-Type": "application/json",
         },
         timeout: 10000,
     });
+
+    constructor() {
+        attachAuthInterceptor(this.client);
+        attachAnonymousFallback(this.client);
+    }
 
     async get<T = any>(url: string): Promise<AxiosResponse<T>> {
         return this.client.get(url);

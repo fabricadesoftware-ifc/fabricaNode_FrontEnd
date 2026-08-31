@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useFilterStore } from '@/stores';
+
 defineProps({
   authors: {
     type: Array,
@@ -9,6 +11,12 @@ defineProps({
     required: true
   }
 });
+
+const filterStore = useFilterStore();
+
+function filtrarPorAutor(author: any) {
+  filterStore.updateOption([author.id], 3);
+}
 </script>
 
 <template>
@@ -16,7 +24,7 @@ defineProps({
     <div class="info-article">
       Autores:
       <div v-for="(author, index) in authors" :key="index" class="text-inline">
-        <a href=""
+        <a href="#" @click.prevent="filtrarPorAutor(author)"
           >{{ author.name }}<span v-if="index < authors.length - 2">, </span>
           <span v-else-if="index === authors.length - 2"> e </span></a
         >
@@ -25,7 +33,7 @@ defineProps({
     <div class="info-article">
       Palavras-chave:
       <div v-for="(keyword, index) in keywords" :key="index" class="text-inline text-underline">
-        <a href="">{{ keyword.key }} <span v-if="index < keywords.length - 1">, </span></a>
+        <span>{{ keyword.key }} <span v-if="index < keywords.length - 1">, </span></span>
       </div>
     </div>
   </div>

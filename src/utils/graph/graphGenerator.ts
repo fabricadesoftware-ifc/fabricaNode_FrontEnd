@@ -1,8 +1,8 @@
 import type { Nodes, Edges } from 'v-network-graph';
-import type { IArticle } from '@/interfaces';
+import type { IPublication } from '@/interfaces';
 
 
-function generateGraphFromArticles(articles: IArticle[]) {
+function generateGraphFromArticles(articles: IPublication[]) {
     const nodes = articles.reduce((acc, article, index) => {
         acc[`node${index}`] = { name: article.label, ...article };
         return acc;
